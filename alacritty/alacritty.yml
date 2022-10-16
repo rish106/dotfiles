@@ -49,8 +49,6 @@ font:
 
   size: 17.0
 
-  use_thin_strokes: true
-
 
 # draw_bold_text_with_bright_colors: true
 
@@ -139,7 +137,7 @@ schemes:
 
       selection:
         text: '#0a0d11'
-        background: '#b3d7ff'
+        background: '#50cad2'
 
       normal:
         black:   '#101317'
