@@ -135,7 +135,11 @@ autocmd FileType cpp nnoremap <leader>fw :CompileAndRunCpp<CR>
 
 command! -nargs=0 RunPy call TermWrapper(printf('python3 %s', expand('%')))
 autocmd FileType python nnoremap <leader>fw :RunPy<CR>
+
 autocmd FileType html nnoremap <leader>fw :term npx parcel %<CR>
+
+command! -nargs=0 RunGo call TermWrapper(printf('go run %s', expand('%')))
+autocmd FileType go nnoremap <leader>fw :RunGo<CR>
 
 " options
 " choose between 'vertical' and 'horizontal' for how the terminal window is split
