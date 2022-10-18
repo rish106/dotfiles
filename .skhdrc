@@ -88,6 +88,10 @@ alt - i : mpc toggle
 alt - u : mpc prev
 alt - o : mpc next
 
+# bluetooth on/off
+alt - 9 : blueutil -p 0
+alt - 0 : blueutil -p 1
+
 # new window of app in current desktop
 cmd - return : open -n -a Alacritty
 ctrl - return : open -n -a Firefox
