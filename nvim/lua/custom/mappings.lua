@@ -4,10 +4,12 @@ local M = {}
 M.disabled = {
 	n = {
 		["<leader>fw"] = "",
+		["<leader>fo"] = "",
 		["<leader>t"] = "",
 		["<leader>tk"] = "",
 		["<leader>th"] = "",
 		["<leader>tt"] = "",
+		["<leader>td"] = "",
 		["<C-n>"] = "",
 		["<C-c>"] = "",
 		["<C-b>"] = "",
@@ -62,6 +64,17 @@ M.tabufline = {
 	},
 }
 
+M.gitsigns ={
+    n = {
+        ["<leader>dt"] = {
+          function()
+            require("gitsigns").toggle_deleted()
+          end,
+          "Toggle deleted",
+        },
+    }
+}
+
 M.lspconfig = {
 	-- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
 
@@ -87,6 +100,7 @@ M.telescope = {
 		-- find
 		["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
 		["<leader>kk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
+        ["<leader>jd"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
 		-- theme switcher
 		["<leader>hh"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
 	},
@@ -94,8 +108,8 @@ M.telescope = {
 
 M.cphelper = {
 	n = {
-		["<leader>cr"] = { "<cmd> CphReceive <CR>", "receive test cases of problem" },
-		["<leader>ct"] = { "<cmd> CphTest <CR>", "run test cases" }
+		["<leader>fo"] = { "<cmd> CphReceive <CR>", "receive test cases of problem" },
+		["<leader>fj"] = { "<cmd> CphTest <CR>", "run test cases" }
 	}
 }
 
