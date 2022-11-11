@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
 current=$(mpc)
-artist=$(mpc current -f %artist%)
-song=$(mpc current -f %title%)
-mpderror=$(echo "$current" | awk '{print $2}')
-if [[ -z $artist ]]; then
+if [[ -z $current ]]; then
     sketchybar -m --set mpd icon.drawing=off	\
                   --set mpd label.drawing=off
 else
     [[ $current == *"[playing]"* ]] && icon="" || icon=""
+    artist=$(mpc current -f %artist%)
+    song=$(mpc current -f %title%)
     output="${artist} • ${song}"
     sketchybar -m --set mpd icon.drawing=on 	\
                   --set mpd label.drawing=on    \
