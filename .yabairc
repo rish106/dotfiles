@@ -14,7 +14,7 @@ yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
 yabai -m config window_border                on
-yabai -m config window_border_width          1
+yabai -m config window_border_width          4
 yabai -m config active_window_border_color   0XFF50CAD2
 yabai -m config normal_window_border_color   0XFF3E4145
 yabai -m config insert_feedback_color        0XFF37D99E
@@ -28,7 +28,7 @@ yabai -m config window_animation_duration    0.35
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config external_bar                 all:46:0
+yabai -m config external_bar                 all:50:0
 yabai -m config top_padding                  0
 yabai -m config bottom_padding               28
 yabai -m config left_padding                 28
@@ -36,7 +36,7 @@ yabai -m config right_padding                28
 yabai -m config window_gap                   14
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off

@@ -17,11 +17,11 @@ POPUP_CORNER_RADIUS=11
 SHADOW=off
 
 # Setting up the general bar appearance and default values
-sketchybar --bar     height=28											\
+sketchybar --bar     height=30											\
                      color=$BAR_COLOR									\
                      shadow=$SHADOW										\
                      position=top										\
-                     border_width=1										\
+                     border_width=2										\
                      border_color=$GREY									\
                      sticky=on											\
                      y_offset=8											\
