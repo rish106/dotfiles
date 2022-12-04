@@ -38,10 +38,14 @@ M.general = {
 		-- Copy all
 		["YY"] = { "<cmd> %y* <CR>", "copy whole file" },
         ["<leader>fw"] = {"@g"},
+        ["<C-d>"] = {"<C-d>zz"}, -- center after moving half page down
+        ["<C-u>"] = {"<C-u>zz"}, -- center after moving half page up
 	},
 	x = {
 		-- copy selected lines to clipboard
 		["<leader>y"] = { "\"*y" },
+        ["<C-d>"] = {"<C-d>zz"}, -- center after moving half page down
+        ["<C-u>"] = {"<C-u>zz"}, -- center after moving half page up
 	},
 }
 
