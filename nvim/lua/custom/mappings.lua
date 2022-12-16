@@ -117,6 +117,17 @@ M.cphelper = {
 	}
 }
 
+M.luasnip = {
+    i = {
+        ["<C-d>"] = { "<cmd> lua require'luasnip'.jump(1) <CR>", "go to next node in snippet" },
+        ["<C-u>"] = { "<cmd> lua require'luasnip'.jump(-1) <CR>", "go to previous node in snippet" }
+    },
+    s = {
+        ["<C-d>"] = { "<cmd> lua require'luasnip'.jump(1) <CR>", "go to next node in snippet" },
+        ["<C-u>"] = { "<cmd> lua require'luasnip'.jump(-1) <CR>", "go to previous node in snippet" }
+    }
+}
+
 vim.cmd[[
     augroup run_file
         autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result \"%\"\<CR>:40vsp | term ./a.out\<CR>i"

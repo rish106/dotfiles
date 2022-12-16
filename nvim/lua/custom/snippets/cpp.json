@@ -34,11 +34,105 @@
             "\tcin.tie(NULL);",
             "\tint t;",
             "\tcin >> t;",
-            "\twhile(t--) {",
+            "\twhile (t--) {",
             "\t\tsolve();",
             "\t}",
             "\treturn 0;",
             "}\n"
-        ]
+        ],
+        "description": "Template for competitive programming"
+    },
+    "sieve": {
+        "prefix": "sieve",
+        "body": [
+            "const ll MX = 1000010;",
+            "bool prime[MX];",
+            "ll pf[MX];",
+            "for (ll i = 0; i < MX; i++) prime[i] = 1;",
+            "prime[0] = prime[1] = 0;",
+            "for (ll p = 2; p*p < MX; p++) {",
+            "\tif (prime[p]) {",
+            "\tpf[p] = p;",
+            "\tfor (ll i = p*p; i < MX; i += p) {",
+            "\t\tprime[i] = 0;",
+            "\t\tpf[i] = p;",
+            "\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "Sieve of Eratosthenes"
+    },
+    "getunique": {
+        "prefix": "getunique",
+        "body": [
+            "sort($1.begin(), $1.end());",
+            "$1.erase(unique($1.begin(), $1.end()), $1.end());"
+        ],
+        "description": "Get unique elements of a vector"
+    },
+    "modpow": {
+        "prefix": "modpow",
+        "body": [
+            "ll modpow(ll base, ll exp) {",
+            "\tll res = 1;",
+            "\twhile (exp) {",
+            "\t\tif (exp & 1) res = (res * base) % mod;",
+            "\t\texp >>= 1;",
+            "\t\tbase = (base * base) % mod;",
+            "\t}",
+            "\treturn res;",
+            "}"
+        ],
+        "description": "evaluate exponent of base in O(log(exp))"
+    },
+    "modinv": {
+        "prefix": "modinv",
+        "body": [
+            "ll modinv(ll base) {",
+            "\treturn mpow(base, mod-2);",
+            "}"
+        ],
+        "description": "evaluate modular inverse of base"
+    },
+    "gcd": {
+        "prefix": "gcd",
+        "body": [
+            "ll gcd(ll a, ll b) {",
+            "\tif (a == 0) return a;",
+            "\telse if (b == 0) return b;",
+            "\telse return gcd(y, x % y);",
+            "}"
+        ],
+        "description": "greates common divisor of two numbers"
+    },
+    "isprime": {
+        "prefix": "isprime",
+        "body": [
+            "bool isprime(ll n) {",
+            "\tif (n <= 1) return false;",
+            "\tif (n <= 3) return true;",
+            "\tif (n % 2 == 0 || n % 3 == 0) return false;",
+            "\tfor (ll i = 5; i*i <= n; i += 6) {",
+            "\t\tif (n % i == 0 || n % (i+2) == 0) return false;",
+            "\t}",
+            "\treturn true;",
+            "}"
+        ],
+        "description": "check whether a number is prime"
+    },
+    "getdivs": {
+        "prefix":"getdivs",
+        "body": [
+            "vector<ll> divs;",
+            "for (ll i = 1; i*i <= $1; i++) {",
+            "\tif ($1 % i == 0) {",
+            "\t\tdivs.push_back(i);",
+            "\t\tdivs.push_back($1/i);",
+            "\t}",
+            "}",
+            "sort(divs.begin(), divs.end());",
+            "divs.erase(unique(divs.begin(), divs.end()), divs.end());"
+        ],
+        "description": "get divisors of a number"
     }
 }
