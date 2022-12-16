@@ -58,6 +58,7 @@ source "$ITEM_DIR/front_app.sh"
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/ble_headset.sh"
 source "$ITEM_DIR/net.sh"
 source "$ITEM_DIR/network.sh"
 
