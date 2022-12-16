@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 sketchybar --add item     calendar right					\
-           --set calendar update_freq=1						\
+           --set calendar update_freq=3						\
                           icon=cal							\
                           icon.color=$YELLOW				\
                           icon.font="$FONT:Semibold:13.0"   \

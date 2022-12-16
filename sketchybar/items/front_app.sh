@@ -7,7 +7,7 @@ sketchybar --add       event        window_focus                      \
                                     label.drawing=off                 \
                                     icon.width=30                     \
                                     icon=$YABAI_GRID                  \
-                                    icon.color=$GREEN                 \
+                                    icon.color=$WHITE                 \
                                     icon.padding_left=10              \
                                     updates=on                        \
                                     associated_display=active         \
@@ -19,7 +19,7 @@ sketchybar --add       event        window_focus                      \
                                     background.padding_left=0         \
                                     background.padding_right=10       \
                                     label.font="$FONT:Bold:13.0"      \
-                                    label.color=$GREEN				  \
+                                    label.color=$WHITE				  \
                                     associated_display=active         \
            --subscribe front_app    front_app_switched
 

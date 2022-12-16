@@ -3,7 +3,7 @@
 # Color Palette
 DARKER_BLACK=0xff0a0d11
 BLACK=0xff101317
-WHITE=0xffcad3f5
+WHITE=0xffd4d4d5
 RED=0xfff87070
 GREEN=0xff37d99e
 BLUE=0xff7ab0df
