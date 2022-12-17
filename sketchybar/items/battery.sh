@@ -3,6 +3,7 @@ sketchybar  --add       item        battery     right						\
                                     update_freq=5						    \
                                     label.font="$FONT:Light:20.0"	        \
                                     icon.font="$FONT:Semibold:12.0"	        \
-                                    label.color=$CYAN				        \
+                                    label.color=$WHITE				        \
+                                    icon.color=$WHITE				        \
                                     label.padding_right=8                   \
             --subscribe battery     system_woke

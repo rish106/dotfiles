@@ -3,16 +3,16 @@
 update () {
     DEVICES=$(system_profiler SPBluetoothDataType -json -detailLevel basic 2>/dev/null | jq '.SPBluetoothDataType[0].device_connected[]? | select( .[] | .device_minorType == "Headset") | keys[]')
 
-    if [ "$DEVICES" = "" ]; then
-        sketchybar --set $NAME drawing=off
+    if [ -z $DEVICES ]; then
+        sketchybar -m --set headphones icon.drawing=off
     else
-        sketchybar --set $NAME drawing=on
-        sketchybar --set headset_name label.drawing=on label="$(echo "$DEVICES" | tr -d '"')"
+        sketchybar -m --set headphones icon.drawing=on
+        sketchybar -m --set headset_name label.drawing=on label="$(echo "$DEVICES" | tr -d '"')"
     fi
 }
 
 popup () {
-    sketchybar --set headphones popup.drawing=$1
+    sketchybar -m --set headphones popup.drawing=$1
 }
 
 case "$SENDER" in
