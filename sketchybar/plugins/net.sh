@@ -10,7 +10,7 @@ if [ $AIRPORT = "Off" ]; then
 elif [ -z $LABEL ]; then
     sketchybar -m --set net icon=􀙥 icon.color=$WHITE label.padding_right=2
 else
-    sketchybar -m --set net icon=􀙇 icon.color=$GREEN label.padding_right=8
+    sketchybar -m --set net icon=􀙇 icon.color=$GREEN label.padding_right=4
 fi
 
 sketchybar -m --set net label="$LABEL"

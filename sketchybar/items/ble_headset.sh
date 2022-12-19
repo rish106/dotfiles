@@ -1,7 +1,7 @@
 sketchybar -m --add       item              headphones  right                                       \
               --set       headphones        icon=􀑈                                                  \
                                             label.drawing=off                                       \
-                                            icon.padding_right=8                                    \
+                                            icon.padding_right=4                                    \
                                             icon.padding_left=0                                     \
                                             script="$PLUGIN_DIR/ble_headset.sh"                     \
                                             popup.horizontal=on                                     \
