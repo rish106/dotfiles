@@ -65,14 +65,6 @@ shift + alt - a : yabai -m window --resize left:-20:0
 lalt - space : yabai -m window --toggle float; \
                sketchybar --trigger window_focus
 
-# fullscreen window
-shift + lalt - f : yabai -m window --toggle zoom-fullscreen; \
-                   sketchybar --trigger window_focus
-
-# zoom parent window
-lalt - f : yabai -m window --toggle zoom-parent; \
-           sketchybar --trigger window_focus
-
 # Focus window up/down in stack
 ctrl + alt - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 ctrl + alt - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
@@ -90,12 +82,9 @@ cmd + ctrl - l  : yabai -m window east --stack $(yabai -m query --windows --wind
 
 # mpd
 alt - i : mpc toggle
-alt - u : mpc prev
-alt - o : mpc next
 
-# bluetooth on/off
-alt - 9 : blueutil -p 0
-alt - 0 : blueutil -p 1
+# bluetooth toggle
+alt - 0 : blueutil -p | grep 1 && blueutil -p 0 || blueutil -p 1
 
 # new window of app in current desktop
 cmd - return : open -n -a Alacritty
