@@ -10,7 +10,7 @@ DOWN_SPEED=$((DOWN/8))
 UP_SPEED=$((UP/8))
 SPEED=""
 
-if [ $AIRPORT = "Off" ] || [ -z $LABEL ]; then
+if [ $AIRPORT = "Off" ] || [ -z "$LABEL" ]; then
     sketchybar -m --set network icon.drawing=off
 elif [ "$UP_SPEED" -gt "$DOWN_SPEED" ]; then
     sketchybar -m --set network icon.drawing=on

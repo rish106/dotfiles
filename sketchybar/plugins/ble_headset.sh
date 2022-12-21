@@ -3,7 +3,7 @@
 update () {
     DEVICES=$(system_profiler SPBluetoothDataType -json -detailLevel basic 2>/dev/null | jq '.SPBluetoothDataType[0].device_connected[]? | select( .[] | .device_minorType == "Headset") | keys[]')
 
-    if [ -z $DEVICES ]; then
+    if [ -z "$DEVICES" ]; then
         sketchybar -m --set headphones icon.drawing=off
     else
         sketchybar -m --set headphones icon.drawing=on
