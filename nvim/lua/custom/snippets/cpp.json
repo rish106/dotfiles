@@ -11,11 +11,6 @@
             "\t\tcout << v[i] << \" \\n\"[i == v.size()-1];\n\t}",
             "}\n",
             "template <typename T>",
-            "void print2d(vector<vector<T> >&v) {",
-            "\tfor (int i = 0; i < v.size(); i++) {",
-            "\t\tprintvector(v[i]);\n\t}",
-            "}\n",
-            "template <typename T>",
             "void printarray(T arr[], T n) {",
             "\tfor (int i = 0; i < n; i++) {",
             "\t\tcout << arr[i] << \" \\n\"[i == n-1];\n\t}",
@@ -52,11 +47,11 @@
             "prime[0] = prime[1] = 0;",
             "for (ll p = 2; p*p < MX; p++) {",
             "\tif (prime[p]) {",
-            "\tpf[p] = p;",
-            "\tfor (ll i = p*p; i < MX; i += p) {",
-            "\t\tprime[i] = 0;",
-            "\t\tpf[i] = p;",
-            "\t}",
+            "\t\tpf[p] = p;",
+            "\t\tfor (ll i = p*p; i < MX; i += p) {",
+            "\t\t\tprime[i] = 0;",
+            "\t\t\tpf[i] = p;",
+            "\t\t}",
             "\t}",
             "}"
         ],
@@ -98,12 +93,12 @@
         "prefix": "gcd",
         "body": [
             "ll gcd(ll a, ll b) {",
-            "\tif (a == 0) return a;",
-            "\telse if (b == 0) return b;",
-            "\telse return gcd(y, x % y);",
+            "\tif (a == 0) return b;",
+            "\telse if (b == 0) return a;",
+            "\telse return gcd(b, a % b);",
             "}"
         ],
-        "description": "greates common divisor of two numbers"
+        "description": "greatest common divisor of two numbers"
     },
     "isprime": {
         "prefix": "isprime",
