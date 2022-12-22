@@ -28,6 +28,9 @@ M.plugins = {
         override_options = {
             statusline = {
                 separator_style = "round",
+                overriden_modules = function()
+                    return require "custom.no_cursor_position"
+                end,
             },
             tabufline = {
                 lazyload = false,
