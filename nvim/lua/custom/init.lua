@@ -3,8 +3,6 @@ local g = vim.g
 
 g.luasnippets_path = "~/.config/nvim/lua/custom/snippets"
 
-vim.cmd "set binary"
-vim.cmd "set noeol"
 opt.relativenumber = true
 opt.scrolloff = 6
 opt.shiftwidth = 4
