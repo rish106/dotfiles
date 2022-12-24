@@ -2,30 +2,30 @@
 local M = {}
 
 M.disabled = {
-	n = {
-		["<leader>fw"] = "",
-		["<leader>fo"] = "",
-		["<leader>t"] = "",
-		["<leader>tk"] = "",
-		["<leader>th"] = "",
-		["<leader>tt"] = "",
-		["<leader>td"] = "",
-		["<C-n>"] = "",
-		["<C-c>"] = "",
-		["<C-b>"] = "",
-		["<C-e>"] = "",
-		["<C-j>"] = "",
-		["<C-k>"] = "",
-		["K"] = "",
-		["<TAB>"] = "",
-		["<S-Tab>"] = "",
-		["<leader>y"] = "",
-	},
+    n = {
+        ["<leader>fw"] = "",
+        ["<leader>fo"] = "",
+        ["<leader>t"] = "",
+        ["<leader>tk"] = "",
+        ["<leader>th"] = "",
+        ["<leader>tt"] = "",
+        ["<leader>td"] = "",
+        ["<C-n>"] = "",
+        ["<C-c>"] = "",
+        ["<C-b>"] = "",
+        ["<C-e>"] = "",
+        ["<C-j>"] = "",
+        ["<C-k>"] = "",
+        ["K"] = "",
+        ["<TAB>"] = "",
+        ["<S-Tab>"] = "",
+        ["<leader>y"] = "",
+    },
     i = {
-		["<C-h>"] = "",
-		["<C-j>"] = "",
-		["<C-k>"] = "",
-		["<C-l>"] = "",
+        ["<C-h>"] = "",
+        ["<C-j>"] = "",
+        ["<C-k>"] = "",
+        ["<C-l>"] = "",
     }
 }
 
@@ -34,87 +34,87 @@ M.general = {
         -- save file in insert mode
         ["<C-s>"] = { "<cmd> w <CR>", "save file" },
     },
-	n = {
-		-- Copy all
-		["YY"] = { "<cmd> %y* <CR>", "copy whole file" },
+    n = {
+        -- Copy all
+        ["YY"] = { "<cmd> %y* <CR>", "copy whole file" },
         ["<leader>fw"] = {"@g"},
         ["<C-d>"] = {"<C-d>zz"}, -- center after moving half page down
         ["<C-u>"] = {"<C-u>zz"}, -- center after moving half page up
-	},
-	x = {
-		-- copy selected lines to clipboard
-		["<leader>y"] = { "\"*y" },
+    },
+    x = {
+        -- copy selected lines to clipboard
+        ["<leader>y"] = { "\"*y" },
         ["<C-d>"] = {"<C-d>zz"}, -- center after moving half page down
         ["<C-u>"] = {"<C-u>zz"}, -- center after moving half page up
-	},
+    },
 }
 
 M.tabufline = {
-	n = {
-		-- cycle through buffers
-		["K"] = {
-			function()
-				require("nvchad_ui.tabufline").tabuflineNext()
-			end,
-			"goto next buffer",
-		},
+    n = {
+        -- cycle through buffers
+        ["K"] = {
+        function()
+                require("nvchad_ui.tabufline").tabuflineNext()
+            end,
+            "goto next buffer",
+        },
 
-		["J"] = {
-			function()
-				require("nvchad_ui.tabufline").tabuflinePrev()
-			end,
-			"goto prev buffer",
-		},
-	},
+        ["J"] = {
+        function()
+                require("nvchad_ui.tabufline").tabuflinePrev()
+            end,
+            "goto prev buffer",
+        },
+    },
 }
 
 M.gitsigns ={
     n = {
         ["<leader>dt"] = {
-          function()
-            require("gitsigns").toggle_deleted()
-          end,
-          "Toggle deleted",
+            function()
+                require("gitsigns").toggle_deleted()
+            end,
+            "Toggle deleted",
         },
     }
 }
 
 M.lspconfig = {
-	-- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
+    -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
 
-	n = {
-		["gK"] = {
-			function()
-				vim.lsp.buf.hover()
-			end,
-			"lsp hover",
-		},
-	},
+    n = {
+        ["gK"] = {
+        function()
+                vim.lsp.buf.hover()
+            end,
+            "lsp hover",
+        },
+    },
 }
 
 M.nvimtree = {
-	n = {
-		-- toggle
-		["<leader>t"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-	},
+    n = {
+        -- toggle
+        ["<leader>t"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    },
 }
 
 M.telescope = {
-	n = {
-		-- find
-		["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
-		["<leader>kk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
+    n = {
+        -- find
+        ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+        ["<leader>kk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
         ["<leader>jd"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
-		-- theme switcher
-		["<leader>hh"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
-	},
+        -- theme switcher
+        ["<leader>hh"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+    },
 }
 
 M.cphelper = {
-	n = {
-		["<leader>fo"] = { "<cmd> CphReceive <CR>", "receive test cases of problem" },
-		["<leader>fj"] = { "<cmd> CphTest <CR>", "run test cases" }
-	}
+    n = {
+        ["<leader>fo"] = { "<cmd> CphReceive <CR>", "receive test cases of problem" },
+        ["<leader>fj"] = { "<cmd> CphTest <CR>", "run test cases" }
+    }
 }
 
 M.luasnip = {

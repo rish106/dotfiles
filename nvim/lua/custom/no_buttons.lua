@@ -2,7 +2,7 @@
 -- must return a table!
 
 return {
-	buttons = function()
-		return ""
-	end,
+    buttons = function()
+        return ""
+    end,
 }
