@@ -7,6 +7,15 @@ local M = {}
 
 M.ui = {
     theme = "radium",
+    changed_themes = {
+        radium = {
+            base_30 = {
+                black2 = "#101317",
+                lightbg = "#101317",
+                statusline_bg = "#101317",
+            }
+        }
+    }
 }
 
 M.plugins = {
@@ -29,13 +38,13 @@ M.plugins = {
             statusline = {
                 separator_style = "round",
                 overriden_modules = function()
-                    return require "custom.no_cursor_position"
+                    return require "custom.statusline_overrides"
                 end,
             },
             tabufline = {
                 lazyload = false,
                 overriden_modules = function()
-                    return require "custom.no_buttons"
+                    return require "custom.tabufline_overrides"
                 end,
             },
         },
