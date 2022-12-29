@@ -37,7 +37,7 @@ tabspaces: 4
 font:
   normal:
       family: CaskaydiaCove Nerd Font
-      style: SemiLight
+      style: Regular
 
   bold:
       family: CaskaydiaCove Nerd Font
@@ -45,7 +45,7 @@ font:
 
   italic:
       family: CaskaydiaCove Nerd Font
-      style: SemiLight Italic
+      style: Italic
 
   size: 17.0
 
