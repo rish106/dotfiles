@@ -5,16 +5,6 @@
             "#include <bits/stdc++.h>\n",
             "using namespace std;\n",
             "typedef long long ll;\n",
-            "template<typename T>",
-            "void printvector(vector<T>& v) {",
-            "\tfor (int i = 0; i < v.size(); i++) {",
-            "\t\tcout << v[i] << \" \\n\"[i == v.size()-1];\n\t}",
-            "}\n",
-            "template <typename T>",
-            "void printarray(T arr[], T n) {",
-            "\tfor (int i = 0; i < n; i++) {",
-            "\t\tcout << arr[i] << \" \\n\"[i == n-1];\n\t}",
-            "}\n",
             "// const ll mod = 1000000007;",
             "// const ll mod = 998244353;",
             "ll n, m, k, q, l, r, x, y, z;",
@@ -45,7 +35,7 @@
             "ll pf[MX];",
             "for (ll i = 0; i < MX; i++) prime[i] = 1;",
             "prime[0] = prime[1] = 0;",
-            "for (ll p = 2; p*p < MX; p++) {",
+            "for (ll p = 2; p < MX; p++) {",
             "\tif (prime[p]) {",
             "\t\tpf[p] = p;",
             "\t\tfor (ll i = p*p; i < MX; i += p) {",
@@ -116,7 +106,7 @@
         "description": "check whether a number is prime"
     },
     "getdivs": {
-        "prefix":"getdivs",
+        "prefix": "getdivs",
         "body": [
             "vector<ll> divs;",
             "for (ll i = 1; i*i <= $1; i++) {",
@@ -129,5 +119,22 @@
             "divs.erase(unique(divs.begin(), divs.end()), divs.end());"
         ],
         "description": "get divisors of a number"
+    },
+    "printarray": {
+        "prefix": "printarray",
+        "body": [
+            "for (int it = 0; it < $2; it++) {",
+            "\tcout << $1[it] << \" \\n\"[it == $2-1];\n}"
+        ],
+        "description": "print array"
+    },
+    "printvector": {
+        "prefix": "printvector",
+        "body": [
+            "for (int it = 0; it < $1.size(); it++) {",
+            "\tcout << $1[it] << \" \\n\"[it == $1.size()-1];\n}"
+        ],
+        "description": "print vector"
     }
+    
 }
