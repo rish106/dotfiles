@@ -10,9 +10,7 @@ $directory\
 [](fg:#212428 bg:#30303a)\
 $git_branch\
 $git_status\
-[](fg:#30303a bg:#3e4145)\
-$time\
-[ ](fg:#3e4145)\
+[ ](fg:#30303a)\
 """
  
 # Disable the blank line at the start of the prompt
@@ -32,10 +30,3 @@ format = '[[ $symbol $branch ](bg:#30303a fg:#37d99e)]($style)'
 [git_status]
 style = "bg:#30303a"
 format = '[[($all_status$ahead_behind )](bg:#30303a fg:#37d99e)]($style)'
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#3e4145"
-format = '[ [$time ](bg:#3e4145 fg:#ffe59e)]($style)'
-
