@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-source $HOME/.config/sketchybar/colors.sh
+
+source "$HOME/.config/sketchybar/colors.sh"
 
 airport=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)
 AIRPORT=$(echo "$airport" | awk 'NR==1 {print $2}')
