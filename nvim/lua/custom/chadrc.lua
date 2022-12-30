@@ -18,38 +18,7 @@ M.ui = {
     }
 }
 
-M.plugins = {
-
-    user = require "custom.plugins",
-
-    ["kyazdani42/nvim-tree.lua"] = {
-        override_options = {
-            filter = {
-                dotfiles = true,
-            },
-            view = {
-                hide_root_folder = false,
-            },
-        },
-    },
-
-    ["NvChad/ui"] = {
-        override_options = {
-            statusline = {
-                separator_style = "round",
-                overriden_modules = function()
-                    return require "custom.statusline_overrides"
-                end,
-            },
-            tabufline = {
-                lazyload = false,
-                overriden_modules = function()
-                    return require "custom.tabufline_overrides"
-                end,
-            },
-        },
-    },
-}
+M.plugins = require "custom.plugins"
 
 M.mappings = require "custom.mappings"
 
