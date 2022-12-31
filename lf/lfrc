@@ -1,22 +1,29 @@
 # Basic Settings
-set hidden true
-set icons true
-set ignorecase true
+set previewer ~/scripts/preview.sh
+set preview
+set hidden
+set icons
+set ignorecase
 set info size
+set scrolloff 8
+set autoquit # kills the server when no clients are connected
 
 # Custom Functions
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f";;
+        application/pdf) zathura "$f";;
         *) open "$f" ;;
     esac
 }}
 
-cmd mkdir ${{
-    printf "Directory Name: "
-    read ans
-    mkdir $ans
-}}
+cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans
+
+# cmd mkdir ${{
+#     printf "Directory Name: "
+#     read ans
+#     mkdir $ans
+# }}
 
 cmd mkfile ${{
     printf "File Name: "
@@ -43,6 +50,8 @@ cmd unarchive ${{
         *.tar.gz) tar -xzvf "$f" ;;
         *.tar.bz2) tar -xjvf "$f" ;;
         *.tar) tar -xvf "$f" ;;
+        *.rar) unrar "$f" ;;
+        *.7z) 7z x "$f" ;;
         *) echo "Unsupported format" ;;
     esac
 }}
@@ -123,10 +132,10 @@ map tt tag-toggle
 map f fzf_jump
 
 # Basic Functions
+map l open
 map <backspace2> set hidden!
-map DD delete
+map dD delete
 map dj calcdirsize
-map si set info size
 map p paste
 map x cut
 map y copy
@@ -147,5 +156,6 @@ map gs cd ~/scripts
 map gc cd ~/.config
 map ge cd ~/code
 map gn cd ~/contests
+map gr cd ~/courses
 map go cd /opt
 map gh cd ~
