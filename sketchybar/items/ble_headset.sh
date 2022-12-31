@@ -1,5 +1,7 @@
+source "$HOME/.config/sketchybar/icons.sh"
+
 sketchybar -m --add       item              headphones  right                                       \
-              --set       headphones        icon=􀑈                                                  \
+              --set       headphones        icon=$HEADSET                                           \
                                             label.drawing=off                                       \
                                             icon.padding_right=4                                    \
                                             icon.padding_left=0                                     \

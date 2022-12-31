@@ -14,3 +14,15 @@ BATTERY_50=􀺶
 BATTERY_25=􀛩
 BATTERY_0=􀛪
 BATTERY_CHARGING=􀢋
+
+# Headset Icon
+HEADSET=􀑈
+
+# Wifi Icons
+WIFI_OFF=􀙈
+WIFI_DISCONNECTED=􀙥
+WIFI_CONNECTED=􀙇
+
+# Download/Upload Speed Icons
+UPLOAD=
+DOWNLOAD=
