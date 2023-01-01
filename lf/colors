@@ -124,36 +124,38 @@ fi      00      # FILE
 *.svgz  01;35
 *.mng   01;35
 *.pcx   01;35
-*.mov   01;35
-*.mpg   01;35
-*.mpeg  01;35
-*.m2v   01;35
-*.mkv   01;35
-*.webm  01;35
-*.ogm   01;35
-*.mp4   01;35
-*.m4v   01;35
-*.mp4v  01;35
-*.vob   01;35
-*.qt    01;35
-*.nuv   01;35
-*.wmv   01;35
-*.asf   01;35
-*.rm    01;35
-*.rmvb  01;35
-*.flc   01;35
-*.avi   01;35
-*.fli   01;35
-*.flv   01;35
-*.gl    01;35
-*.dl    01;35
-*.xcf   01;35
-*.xwd   01;35
-*.yuv   01;35
-*.cgm   01;35
-*.emf   01;35
-*.ogv   01;35
-*.ogx   01;35
+
+# video formats
+*.mov   01;33
+*.mpg   01;33
+*.mpeg  01;33
+*.m2v   01;33
+*.mkv   01;33
+*.webm  01;33
+*.ogm   01;33
+*.mp4   01;33
+*.m4v   01;33
+*.mp4v  01;33
+*.vob   01;33
+*.qt    01;33
+*.nuv   01;33
+*.wmv   01;33
+*.asf   01;33
+*.rm    01;33
+*.rmvb  01;33
+*.flc   01;33
+*.avi   01;33
+*.fli   01;33
+*.flv   01;33
+*.gl    01;33
+*.dl    01;33
+*.xcf   01;33
+*.xwd   01;33
+*.yuv   01;33
+*.cgm   01;33
+*.emf   01;33
+*.ogv   01;33
+*.ogx   01;33
 
 # audio formats (dircolors defaults)
 *.aac   00;36
@@ -174,4 +176,4 @@ fi      00      # FILE
 *.xspf  00;36
 
 # other formats
-*.pdf   02;33
+*.pdf   02;31

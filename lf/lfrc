@@ -12,7 +12,7 @@ set autoquit # kills the server when no clients are connected
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f";;
-        application/pdf) zathura "$f";;
+        application/pdf) setsid zathura "$fx" >/dev/null 2>&1;;
         *) open "$f" ;;
     esac
 }}
@@ -103,7 +103,6 @@ cmd fzf_jump ${{
 # Remove some defaults
 map m
 map o
-map n
 map "'"
 map '"'
 map d
@@ -157,5 +156,6 @@ map gc cd ~/.config
 map ge cd ~/code
 map gn cd ~/contests
 map gr cd ~/courses
+map gb cd ~/books
 map go cd /opt
 map gh cd ~
