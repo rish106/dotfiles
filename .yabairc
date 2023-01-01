@@ -43,6 +43,8 @@ yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
+yabai -m rule --add app="^mylauncher$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Path Finder$" manage=off
 yabai -m rule --add app="^ProtonVPN$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
