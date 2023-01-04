@@ -2,26 +2,6 @@
 
 local M = {}
 
-M.statusline = {
-    fileInfo = function()
-        return ""
-    end,
-
-    cwd = function()
-        return ""
-    end,
-
-    cursor_position = function()
-        return ""
-    end,
-}
-
-M.tabufline = {
-    buttons = function()
-        return ""
-    end,
-}
-
 M.nvimtree = {
     filter = {
         dotfiles = true,
