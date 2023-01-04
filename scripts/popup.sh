@@ -11,4 +11,4 @@ TERM_HEIGHT=1440
 let "X=SCREEN_WIDTH/2-TERM_WIDTH/2"
 let "Y=SCREEN_HEIGHT/2-TERM_HEIGHT/2"
 
-alacritty -t "${TITLE}" -o window.position.x="${X}" -o window.position.y="${Y}" -o window.dimensions.lines=20 -o window.dimensions.columns=80 -o window.decorations=none --working-directory "$(pwd)" -e "$1"
+alacritty -t "${TITLE}" -o window.position.x="${X}" -o window.position.y="${Y}" -o window.dimensions.lines=12 -o window.dimensions.columns=80 -o window.decorations=none --working-directory "$(pwd)" -e "$1"
