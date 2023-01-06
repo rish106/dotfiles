@@ -8,7 +8,7 @@
 | WM                | [yabai](https://github.com/koekeishiya/yabai) |
 | Bar               | [sketchybar](https://github.com/FelixKratz/SketchyBar) |
 | Package Manager   | [brew](https://github.com/Homebrew/brew) |
-| Editor            | [neovim](https://github.com/neovim/neovim) using the [NvChad](https://github.com/NvChad/NvChad) config |
+| Editor            | [neovim](https://github.com/neovim/neovim) using [NvChad](https://github.com/NvChad/NvChad) config |
 | Terminal          | [Alacritty](https://github.com/alacritty/alacritty) |
 | Terminal Font     | [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono) |
 | App Launcher      | [Custom script](https://github.com/rish106/dotfiles#app-launcher) |
@@ -20,7 +20,7 @@
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/36294070/210532918-0ef03091-6334-42c8-8fbc-07814623d0e9.png">
 
-# neovim setup
+## neovim setup
 I use NvChad with the radium theme. To use my config,
 - Download NvChad using
 ```zsh
@@ -32,7 +32,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 nvim +PackerSync
 ```
 
-# App Launcher
+## App Launcher
 <img width="867" alt="image" src="https://user-images.githubusercontent.com/36294070/210528079-717fcae8-f288-4dbf-93de-4fb79f5ad755.png">
 
 Spawns an instance of terminal and runs the fuzzy finder on app directories using the popup and launcher scripts present in [scripts](https://github.com/rish106/dotfiles/blob/master/scripts)
