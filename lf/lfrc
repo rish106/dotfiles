@@ -12,7 +12,7 @@ set autoquit # kills the server when no clients are connected
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f";;
-        application/pdf) setsid zathura "$fx" >/dev/null 2>&1;;
+        application/pdf) zathura "$fx" >/dev/null 2>&1 &;;
         *) open "$f" ;;
     esac
 }}
