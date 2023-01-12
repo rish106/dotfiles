@@ -1,6 +1,7 @@
 # imp for correct colours in tmux
 env:
   TERM: xterm-256color
+  LC_ALL: "en_US.UTF-8"
 
 window:
   padding:
