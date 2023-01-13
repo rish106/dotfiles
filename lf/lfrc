@@ -25,11 +25,7 @@ cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans
 #     mkdir $ans
 # }}
 
-cmd mkfile ${{
-    printf "File Name: "
-    read ans
-    $EDITOR $ans
-}}
+cmd mkfile %printf "File Name: "; read ans; touch $ans
 
 cmd chmod ${{
     printf "Mode Bits: "
