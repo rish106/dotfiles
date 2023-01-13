@@ -131,6 +131,7 @@ M.luasnip = {
 vim.cmd[[
     augroup run_file
         autocmd BufEnter *.cpp let @g=":w\<CR> :!g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result \"%\"\<CR>:40vsp | term ./a.out\<CR>i"
+        autocmd BufEnter *.c let @g=":w\<CR> :!g++ \"%\"\<CR>:40vsp | term ./a.out\<CR>i"
         autocmd BufEnter *.py let @g=":w\<CR>:40vsp | term python3 \"%\"\<CR>i"
         autocmd BufEnter *.go let @g=":w\<CR>:40vsp | term go run \"%\"\<CR>i"
         autocmd BufEnter *.html let @g=":w\<CR>:40vsp | term npx parcel \"%\"\<CR>i"

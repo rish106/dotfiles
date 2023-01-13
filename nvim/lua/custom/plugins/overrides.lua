@@ -14,6 +14,7 @@ M.nvimtree = {
 M.treesitter = {
     ensure_installed = {
         "bash",
+        "c",
         "cpp",
         "css",
         "go",
@@ -30,6 +31,7 @@ M.mason = {
     ensure_installed = {
         "lua-language-server",
         "typescript-language-server",
+        "gopls",
     },
 }
 
