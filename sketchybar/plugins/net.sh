@@ -7,7 +7,7 @@ airport=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curren
 AIRPORT=$(echo "$airport" | awk 'NR==1 {print $2}')
 LABEL=$(echo "$airport" | grep -o "SSID: .*" | sed 's/^SSID: //')
 
-if [ $AIRPORT = "Off" ]; then
+if [ "$AIRPORT" = "Off" ]; then
     sketchybar -m --set net icon=$WIFI_OFF              \
                             icon.color=$WHITE           \
                             label.padding_right=2
