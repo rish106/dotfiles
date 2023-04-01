@@ -130,8 +130,8 @@ M.luasnip = {
 
 vim.cmd[[
     augroup run_file
-        autocmd BufEnter *.cpp let @g=":w\<CR> :40vsp | term (g++ -std=c++17 -O2 \"%\" && ./a.out)\<CR>i"
-        autocmd BufEnter *.c let @g=":w\<CR> :40vsp | term (g++ \"%\" && ./a.out)\<CR>i"
+        autocmd BufEnter *.cpp let @g=":w\<CR> :40vsp | term g++ -std=c++17 -O2 \"%\" && ./a.out\<CR>i"
+        autocmd BufEnter *.c let @g=":w\<CR> :40vsp | term gcc \"%\" && ./a.out\<CR>i"
         autocmd BufEnter *.py let @g=":w\<CR>:40vsp | term python3 \"%\"\<CR>i"
         autocmd BufEnter *.go let @g=":w\<CR>:40vsp | term go run \"%\"\<CR>i"
         autocmd BufEnter *.sml let @g=":w\<CR>:40vsp | term sml <\"%\"\<CR>i"
