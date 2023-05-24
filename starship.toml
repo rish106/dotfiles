@@ -23,7 +23,7 @@ truncation_length = 3
 truncation_symbol = "…/"
  
 [git_branch]
-symbol = ""
+symbol = "󰘬"
 style = "bg:#30303a"
 format = '[[ $symbol $branch ](bg:#30303a fg:#37d99e)]($style)'
  
