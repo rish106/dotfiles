@@ -5,11 +5,11 @@ source "$HOME/.config/sketchybar/icons.sh"
 airport=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)
 AIRPORT=$(echo "$airport" | awk 'NR==1 {print $2}')
 LABEL=$(echo "$airport" | grep -o "SSID: .*" | sed 's/^SSID: //')
-UPDOWN=$(ifstat -i "en0" -b 0.1 1 | tail -n1)
-DOWN=$(echo $UPDOWN | awk "{ print \$1 }" | cut -f1 -d ".")
-UP=$(echo $UPDOWN | awk "{ print \$2 }" | cut -f1 -d ".")
-DOWN_SPEED=$((DOWN/8))
-UP_SPEED=$((UP/8))
+UPDOWN=$(ifstat -i "en0" 0.1 1 | tail -n 1)
+DOWN=$(echo $UPDOWN | awk "{ print \$1 }" | cut -f 1 -d ".")
+UP=$(echo $UPDOWN | awk "{ print \$2 }" | cut -f 1 -d ".")
+DOWN_SPEED=$((DOWN/1))
+UP_SPEED=$((UP/1))
 SPEED=""
 
 if [ "$AIRPORT" = "Off" ] || [ -z "$LABEL" ]; then
