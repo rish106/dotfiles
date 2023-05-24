@@ -1,140 +1,140 @@
 {
-    "template": {
-        "prefix": "template",
-        "body": [
-            "#include <bits/stdc++.h>\n",
-            "using namespace std;\n",
-            "typedef long long ll;\n",
-            "// const ll mod = 1000000007;",
-            "// const ll mod = 998244353;",
-            "ll n, m, k, q, l, r, x, y, z;",
-            "const ll template_array_size = 1e6 + 101;",
-            "ll a[template_array_size], b[template_array_size], c[template_array_size];",
-            "string s, t;",
-            "ll ans = 0;\n",
-            "void solve() {",
-            "\t$1\n}\n",
-            "int main() {",
-            "\tios_base::sync_with_stdio(false);",
-            "\tcin.tie(NULL);",
-            "\tint t;",
-            "\tcin >> t;",
-            "\twhile (t--) {",
-            "\t\tsolve();",
-            "\t}",
-            "\treturn 0;",
-            "}\n"
-        ],
-        "description": "Template for competitive programming"
-    },
-    "sieve": {
-        "prefix": "sieve",
-        "body": [
-            "const ll MX = 1000010;",
-            "bool prime[MX];",
-            "ll pf[MX];",
-            "for (ll i = 0; i < MX; i++) prime[i] = 1;",
-            "prime[0] = prime[1] = 0;",
-            "for (ll p = 2; p < MX; p++) {",
-            "\tif (prime[p]) {",
-            "\t\tpf[p] = p;",
-            "\t\tfor (ll i = p*p; i < MX; i += p) {",
-            "\t\t\tprime[i] = 0;",
-            "\t\t\tpf[i] = p;",
-            "\t\t}",
-            "\t}",
-            "}"
-        ],
-        "description": "Sieve of Eratosthenes"
-    },
-    "getunique": {
-        "prefix": "getunique",
-        "body": [
-            "sort($1.begin(), $1.end());",
-            "$1.erase(unique($1.begin(), $1.end()), $1.end());"
-        ],
-        "description": "Get unique elements of a vector"
-    },
-    "modpow": {
-        "prefix": "modpow",
-        "body": [
-            "ll modpow(ll base, ll exp) {",
-            "\tll res = 1;",
-            "\twhile (exp) {",
-            "\t\tif (exp & 1) res = (res * base) % mod;",
-            "\t\texp >>= 1;",
-            "\t\tbase = (base * base) % mod;",
-            "\t}",
-            "\treturn res;",
-            "}"
-        ],
-        "description": "evaluate exponent of base in O(log(exp))"
-    },
-    "modinv": {
-        "prefix": "modinv",
-        "body": [
-            "ll modinv(ll base) {",
-            "\treturn mpow(base, mod-2);",
-            "}"
-        ],
-        "description": "evaluate modular inverse of base"
-    },
-    "gcd": {
-        "prefix": "gcd",
-        "body": [
-            "ll gcd(ll a, ll b) {",
-            "\tif (a == 0) return b;",
-            "\telse if (b == 0) return a;",
-            "\telse return gcd(b, a % b);",
-            "}"
-        ],
-        "description": "greatest common divisor of two numbers"
-    },
-    "isprime": {
-        "prefix": "isprime",
-        "body": [
-            "bool isprime(ll n) {",
-            "\tif (n <= 1) return false;",
-            "\tif (n <= 3) return true;",
-            "\tif (n % 2 == 0 || n % 3 == 0) return false;",
-            "\tfor (ll i = 5; i*i <= n; i += 6) {",
-            "\t\tif (n % i == 0 || n % (i+2) == 0) return false;",
-            "\t}",
-            "\treturn true;",
-            "}"
-        ],
-        "description": "check whether a number is prime"
-    },
-    "getdivs": {
-        "prefix": "getdivs",
-        "body": [
-            "vector<ll> divs;",
-            "for (ll i = 1; i*i <= $1; i++) {",
-            "\tif ($1 % i == 0) {",
-            "\t\tdivs.push_back(i);",
-            "\t\tdivs.push_back($1/i);",
-            "\t}",
-            "}",
-            "sort(divs.begin(), divs.end());",
-            "divs.erase(unique(divs.begin(), divs.end()), divs.end());"
-        ],
-        "description": "get divisors of a number"
-    },
-    "printarray": {
-        "prefix": "printarray",
-        "body": [
-            "for (int it = 0; it < $2; it++) {",
-            "\tcout << $1[it] << \" \\n\"[it == $2-1];\n}"
-        ],
-        "description": "print array"
-    },
-    "printvector": {
-        "prefix": "printvector",
-        "body": [
-            "for (int it = 0; it < $1.size(); it++) {",
-            "\tcout << $1[it] << \" \\n\"[it == $1.size()-1];\n}"
-        ],
-        "description": "print vector"
-    }
-    
+  "template": {
+    "prefix": "template",
+    "body": [
+      "#include <bits/stdc++.h>\n",
+      "using namespace std;\n",
+      "typedef long long ll;\n",
+      "// const ll mod = 1000000007;",
+      "// const ll mod = 998244353;",
+      "ll n, m, k, q, l, r, x, y, z;",
+      "const ll template_array_size = 1e6 + 101;",
+      "ll a[template_array_size], b[template_array_size], c[template_array_size];",
+      "string s, t;",
+      "ll ans = 0;\n",
+      "void solve() {",
+      "\t$1\n}\n",
+      "int main() {",
+      "\tios_base::sync_with_stdio(false);",
+      "\tcin.tie(NULL);",
+      "\tint t;",
+      "\tcin >> t;",
+      "\twhile (t--) {",
+      "\t\tsolve();",
+      "\t}",
+      "\treturn 0;",
+      "}\n"
+    ],
+    "description": "Template for competitive programming"
+  },
+  "sieve": {
+    "prefix": "sieve",
+    "body": [
+      "const ll MX = 1000010;",
+      "bool prime[MX];",
+      "ll pf[MX];",
+      "for (ll i = 0; i < MX; i++) prime[i] = 1;",
+      "prime[0] = prime[1] = 0;",
+      "for (ll p = 2; p < MX; p++) {",
+      "\tif (prime[p]) {",
+      "\t\tpf[p] = p;",
+      "\t\tfor (ll i = p*p; i < MX; i += p) {",
+      "\t\t\tprime[i] = 0;",
+      "\t\t\tpf[i] = p;",
+      "\t\t}",
+      "\t}",
+      "}"
+    ],
+    "description": "Sieve of Eratosthenes"
+  },
+  "getunique": {
+    "prefix": "getunique",
+    "body": [
+      "sort($1.begin(), $1.end());",
+      "$1.erase(unique($1.begin(), $1.end()), $1.end());"
+    ],
+    "description": "Get unique elements of a vector"
+  },
+  "modpow": {
+    "prefix": "modpow",
+    "body": [
+      "ll modpow(ll base, ll exp) {",
+      "\tll res = 1;",
+      "\twhile (exp) {",
+      "\t\tif (exp & 1) res = (res * base) % mod;",
+      "\t\texp >>= 1;",
+      "\t\tbase = (base * base) % mod;",
+      "\t}",
+      "\treturn res;",
+      "}"
+    ],
+    "description": "evaluate exponent of base in O(log(exp))"
+  },
+  "modinv": {
+    "prefix": "modinv",
+    "body": [
+      "ll modinv(ll base) {",
+      "\treturn mpow(base, mod-2);",
+      "}"
+    ],
+    "description": "evaluate modular inverse of base"
+  },
+  "gcd": {
+    "prefix": "gcd",
+    "body": [
+      "ll gcd(ll a, ll b) {",
+      "\tif (a == 0) return b;",
+      "\telse if (b == 0) return a;",
+      "\telse return gcd(b, a % b);",
+      "}"
+    ],
+    "description": "greatest common divisor of two numbers"
+  },
+  "isprime": {
+    "prefix": "isprime",
+    "body": [
+      "bool isprime(ll n) {",
+      "\tif (n <= 1) return false;",
+      "\tif (n <= 3) return true;",
+      "\tif (n % 2 == 0 || n % 3 == 0) return false;",
+      "\tfor (ll i = 5; i*i <= n; i += 6) {",
+      "\t\tif (n % i == 0 || n % (i+2) == 0) return false;",
+      "\t}",
+      "\treturn true;",
+      "}"
+    ],
+    "description": "check whether a number is prime"
+  },
+  "getdivs": {
+    "prefix": "getdivs",
+    "body": [
+      "vector<ll> divs;",
+      "for (ll i = 1; i*i <= $1; i++) {",
+      "\tif ($1 % i == 0) {",
+      "\t\tdivs.push_back(i);",
+      "\t\tdivs.push_back($1/i);",
+      "\t}",
+      "}",
+      "sort(divs.begin(), divs.end());",
+      "divs.erase(unique(divs.begin(), divs.end()), divs.end());"
+    ],
+    "description": "get divisors of a number"
+  },
+  "printarray": {
+    "prefix": "printarray",
+    "body": [
+      "for (int it = 0; it < $2; it++) {",
+      "\tcout << $1[it] << \" \\n\"[it == $2-1];\n}"
+    ],
+    "description": "print array"
+  },
+  "printvector": {
+    "prefix": "printvector",
+    "body": [
+      "for (int it = 0; it < $1.size(); it++) {",
+      "\tcout << $1[it] << \" \\n\"[it == $1.size()-1];\n}"
+    ],
+    "description": "print vector"
+  }
+
 }
