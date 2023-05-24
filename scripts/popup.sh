@@ -6,7 +6,7 @@ SCREEN_WIDTH=`yabai -m query --displays --display | jq .frame.w*2`
 SCREEN_HEIGHT=`yabai -m query --displays --display | jq .frame.h*2`
 
 TERM_WIDTH=1440
-TERM_HEIGHT=900
+TERM_HEIGHT=2160
 
 let "X=SCREEN_WIDTH/2-TERM_WIDTH/2"
 let "Y=SCREEN_HEIGHT/2-TERM_HEIGHT/2"
