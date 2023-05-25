@@ -1,7 +1,7 @@
 local M = {}
 
 local my_root_folder_label = function(path)
-    return "./" .. vim.fn.fnamemodify(path, ":t") .. "/.."
+    return "./" .. vim.fn.fnamemodify(path, ":t") .. "/"
 end
 
 M.treesitter = {
@@ -50,7 +50,7 @@ M.mason = {
 
     -- web dev stuff
     "typescript-language-server",
-    "prettier",
+    "tailwind-language-server",
   },
 }
 
@@ -65,12 +65,17 @@ M.nvimtree = {
   },
 
   renderer = {
-    highlight_git = true,
     root_folder_label = my_root_folder_label,
     icons = {
       show = {
         git = true,
       },
+      glyphs = {
+        git = {
+          unstaged = "!",
+          untracked = "",
+        }
+      }
     },
   },
 }

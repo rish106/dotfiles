@@ -1,9 +1,4 @@
 local opt = vim.opt
-local g = vim.g
-
--- todo
--- fix custom snippets path
-g.lua_snippets_path = "~/.config/nvim/lua/custom/snippets"
 
 opt.relativenumber = true
 opt.scrolloff = 6

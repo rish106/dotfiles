@@ -18,6 +18,8 @@ M.disabled = {
     ["K"] = "",
     ["j"] = "",
     ["k"] = "",
+    ["<Up>"] = "",
+    ["<Down>"] = "",
     ["<TAB>"] = "",
     ["<S-Tab>"] = "",
     ["<leader>y"] = "",
@@ -31,10 +33,14 @@ M.disabled = {
   v = {
     ["j"] = "",
     ["k"] = "",
+    ["<Up>"] = "",
+    ["<Down>"] = "",
   },
   x = {
     ["j"] = "",
     ["k"] = "",
+    ["<Up>"] = "",
+    ["<Down>"] = "",
   },
 }
 
@@ -49,7 +55,6 @@ M.general = {
     ["<leader>fw"] = {"@g"},
     ["<C-d>"] = {"<C-d>zz"}, -- center after moving half page down
     ["<C-u>"] = {"<C-u>zz"}, -- center after moving half page up
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
   x = {
     -- copy selected lines to clipboard

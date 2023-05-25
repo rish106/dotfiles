@@ -7,15 +7,6 @@ local plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -38,6 +29,16 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({})
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = "~/.config/nvim/lua/custom/snippets",
+      })
+    end,
+  },
+
   -- Install a plugin
   {
     "editorconfig/editorconfig-vim",
@@ -52,7 +53,7 @@ local plugins = {
 
   -- To make a plugin not be loaded
   {
-    "NvChad/nvim-colorizer.lua",
+    "NvChad/nvterm",
     enabled = false
   },
 
