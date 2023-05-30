@@ -44,8 +44,8 @@ fi      󰈔       # FILE
 *.slim          
 *.haml          
 *.ejs           
-*.css           
-*.less          
+*.css           
+*.less          
 *.md            
 *.mdx           
 *.markdown      
@@ -73,13 +73,6 @@ fi      󰈔       # FILE
 *.toml          
 *.bat           
 *.mk            
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
 *.twig          
 *.cpp           
 *.c++           
@@ -148,14 +141,14 @@ fi      󰈔       # FILE
 *.tsx           
 *.jl            
 *.pp            
-*.vue           ﵂
+*.vue           󰡄
 *.elm           
 *.swift         
 *.xcplayground  
-*.tex           ﭨ
-*.r             ﳒ
-*.rproj         鉶
-*.sol           ﲹ
+*.tex           
+*.r             󰟔
+*.rproj         󰟔
+*.sol           󰿈
 *.pem           
 
 # file names (vim-devicons) (case-insensitive not supported in lf)
@@ -300,10 +293,12 @@ Vagrantfile             
 *.tif   󰈟
 *.tiff  󰈟
 *.png   󰈟
+*.webp  󰈟
 *.svg   󰈟
 *.svgz  󰈟
 *.mng   󰈟
 *.pcx   󰈟
+*.ico   󰈟
 
 # video formats
 *.mov   
