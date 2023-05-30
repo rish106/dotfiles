@@ -4,8 +4,7 @@ local M = {}
 -- Path to overriding theme and highlights files
 -- local highlights = require "custom.highlights"
 
-local statusline_overrides = require "custom.configs.statusline_overrides"
-local tabufline_overrides = require "custom.configs.tabufline_overrides"
+local overrides = require "custom.configs.overrides"
 
 M.ui = {
   theme = "catppuccin",
@@ -28,13 +27,13 @@ M.ui = {
     theme = "minimal",
     separator_style = "round",
     overriden_modules = function ()
-      return statusline_overrides
+      return overrides.statusline
     end,
   },
   tabufline = {
     lazyload = false,
     overriden_modules = function ()
-      return tabufline_overrides
+      return overrides.tabufline
     end,
   }
 }

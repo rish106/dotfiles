@@ -50,7 +50,6 @@ M.mason = {
 
     -- web dev stuff
     "typescript-language-server",
-    "tailwind-language-server",
   },
 }
 
@@ -90,6 +89,12 @@ M.statusline = {
   end,
 
   cursor_position = function()
+    return ""
+  end,
+}
+
+M.tabufline = {
+  buttons = function()
     return ""
   end,
 }
