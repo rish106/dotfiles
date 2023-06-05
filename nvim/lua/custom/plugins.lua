@@ -51,6 +51,23 @@ local plugins = {
     opts = {},
   },
 
+  {
+    "p00f/cphelper.nvim",
+    lazy = false,
+    dependencies = {
+      {
+        "nvim-lua/plenary.nvim",
+        lazy = false,
+      }
+    }
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "typescriptreact" },
+    opts = {},
+  },
+
   -- To make a plugin not be loaded
   {
     "NvChad/nvterm",
