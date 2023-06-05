@@ -71,14 +71,14 @@ M.tabufline = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
       end,
-      "goto next buffer",
+      "Goto next buffer",
     },
 
     ["J"] = {
       function()
         require("nvchad_ui.tabufline").tabuflinePrev()
       end,
-      "goto prev buffer",
+      "Goto prev buffer",
     },
   },
 }
@@ -96,13 +96,12 @@ M.gitsigns ={
 
 M.lspconfig = {
   -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
-
   n = {
     ["gK"] = {
       function()
         vim.lsp.buf.hover()
       end,
-      "lsp hover",
+      "LSP hover",
     },
   },
 }
