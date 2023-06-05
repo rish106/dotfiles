@@ -37,18 +37,18 @@ tabspaces: 4
 
 font:
   normal:
-      family: JetBrainsMono Nerd Font
-      style: SemiBold
+      family: BlexMono Nerd Font
+      style: Medium
 
   bold:
-      family: JetBrainsMono Nerd Font
-      style: Bold
+      family: BlexMono Nerd Font
+      style: Semibold
 
   italic:
-      family: JetBrainsMono Nerd Font
-      style: SemiBold Italic
+      family: BlexMono Nerd Font
+      style: Medium Italic
 
-  size: 16.0
+  size: 17.0
 
 
 # draw_bold_text_with_bright_colors: true
@@ -243,9 +243,7 @@ colors:
 #BELL
 bell:
   animation: EaseOutExpo
-
   duration: 0
-
   color: '#ffffff'
 
 #CURSOR
@@ -255,5 +253,23 @@ cursor:
   blinking: Off
   unfocused_hollow: true
   thickness: 0.15
+
+# keybinds
+key_bindings:
+  - { key: O, mods: Command, chars: "\x01\x54" } # open session select popup
+  - { key: T, mods: Command, chars: "\x01c" } # create a new tmux window
+  - { key: W, mods: Command, chars: "\x01x" } # kill the current pane
+  - { key: K, mods: Command, chars: "\x01n" } # switch to next tmux window
+  - { key: J, mods: Command, chars: "\x01p" } # switch to previous tmux window
+  - { key: R, mods: Command, chars: "\x01," } # rename the current tmux window
+  - { key: Key1, mods: Command, chars: "\x011" } # select tmux window 1
+  - { key: Key2, mods: Command, chars: "\x012" } #                ... 2
+  - { key: Key3, mods: Command, chars: "\x013" } #                ... 3
+  - { key: Key4, mods: Command, chars: "\x014" } #                ... 4
+  - { key: Key5, mods: Command, chars: "\x015" } #                ... 5
+  - { key: Key6, mods: Command, chars: "\x016" } #                ... 6
+  - { key: Key7, mods: Command, chars: "\x017" } #                ... 7
+  - { key: Key8, mods: Command, chars: "\x018" } #                ... 8
+  - { key: Key9, mods: Command, chars: "\x019" } #                ... 9
 
 live_config_reload: true
