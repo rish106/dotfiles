@@ -162,3 +162,9 @@ map gr cd ~/courses
 map gb cd ~/books
 map go cd /opt
 map gh cd ~
+
+# sort natural with size info
+map sn :{{
+    set sortby natural
+    set info size
+}}
