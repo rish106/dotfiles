@@ -1,5 +1,6 @@
 # Basic Settings
-set previewer ~/.config/scripts/preview.sh
+set previewer "~/.config/scripts/preview.sh"
+set cleaner "~/.config/scripts/cleaner.sh"
 set preview
 set hidden
 set icons
@@ -154,7 +155,7 @@ map U unselect
 map gd cd ~/Documents
 map gD cd ~/Downloads
 map ge cd ~/Desktop
-map gs cd ~/scripts
+map gs cd ~/.config/scripts
 map gc cd ~/.config
 map ge cd ~/code
 map gn cd ~/contests
