@@ -2,8 +2,6 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
--- local highlights = require "custom.highlights"
-
 local overrides = require "custom.configs.overrides"
 
 M.ui = {
@@ -18,13 +16,14 @@ M.ui = {
       },
       base_16 = {
         base00 = "#11111b",
-      }
-    }
+      },
+    },
   },
-  -- hl_override = highlights.override,
-  -- hl_add = highlights.add,
+  cmp = {
+    selected_item_bg = "simple",
+  },
   statusline = {
-    theme = "minimal",
+    theme = "default",
     separator_style = "round",
     overriden_modules = function ()
       return overrides.statusline
@@ -36,6 +35,16 @@ M.ui = {
       return overrides.tabufline
     end,
   }
+}
+
+M.lazy_nvim = {
+  performance = {
+    rtp = {
+      disabled_plugins = vim.tbl_filter(function(name)
+        return name ~= "editorconfig"
+      end, require("plugins.configs.lazy_nvim").performance.rtp.disabled_plugins),
+    },
+  },
 }
 
 M.plugins = "custom.plugins"

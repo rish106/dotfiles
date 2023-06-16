@@ -13,6 +13,17 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    commit = "950d0e3a93ba61c13b031c086d11eacf4bd48d24",
+    opts = function()
+      return require "custom.configs.cmp"
+    end,
+    config = function(_, opts)
+      require("cmp").setup(opts)
+    end,
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -41,25 +52,8 @@ local plugins = {
 
   -- Install a plugin
   {
-    "editorconfig/editorconfig-vim",
-    lazy = false,
-  },
-
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    opts = {},
-  },
-
-  {
     "p00f/cphelper.nvim",
     lazy = false,
-    dependencies = {
-      {
-        "nvim-lua/plenary.nvim",
-        lazy = false,
-      }
-    }
   },
 
   {
@@ -68,15 +62,24 @@ local plugins = {
     opts = {},
   },
 
+  {
+    "andweeb/presence.nvim",
+    lazy = false,
+    opts = {},
+    config = function (_, opts)
+      require("presence").setup(opts)
+    end,
+  },
+
   -- To make a plugin not be loaded
   {
     "NvChad/nvterm",
-    enabled = false
+    enabled = false,
   },
 
   {
     "folke/which-key.nvim",
-    enabled = false
+    enabled = false,
   },
 
   -- All NvChad plugins are lazy-loaded by default

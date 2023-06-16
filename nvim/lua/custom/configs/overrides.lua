@@ -49,7 +49,8 @@ M.mason = {
     "lua-language-server",
 
     -- web dev stuff
-    "typescript-language-server",
+    "vtsls",
+    "tailwindcss-language-server",
   },
 }
 

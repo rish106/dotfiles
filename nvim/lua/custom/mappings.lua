@@ -16,10 +16,6 @@ M.disabled = {
     ["<C-j>"] = "",
     ["<C-k>"] = "",
     ["K"] = "",
-    ["j"] = "",
-    ["k"] = "",
-    ["<Up>"] = "",
-    ["<Down>"] = "",
     ["<TAB>"] = "",
     ["<S-Tab>"] = "",
     ["<leader>y"] = "",
@@ -30,24 +26,13 @@ M.disabled = {
     ["<C-k>"] = "",
     ["<C-l>"] = "",
   },
-  v = {
-    ["j"] = "",
-    ["k"] = "",
-    ["<Up>"] = "",
-    ["<Down>"] = "",
-  },
-  x = {
-    ["j"] = "",
-    ["k"] = "",
-    ["<Up>"] = "",
-    ["<Down>"] = "",
-  },
 }
 
 M.general = {
   i = {
     -- save file in insert mode
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
+    ["<TAB>"] = { "\t" },
   },
   n = {
     -- Copy all
@@ -150,6 +135,7 @@ vim.cmd[[
   autocmd BufEnter *.go let @g=":w\<CR>:40vsp | term go run \"%\"\<CR>i"
   autocmd BufEnter *.sml let @g=":w\<CR>:40vsp | term sml <\"%\"\<CR>i"
   autocmd BufEnter *.html let @g=":w\<CR>:40vsp | term npx parcel \"%\"\<CR>i"
+  autocmd BufEnter *.tex let @g=":TexlabBuild\<CR>"
   augroup end
 ]]
 

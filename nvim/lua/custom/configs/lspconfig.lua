@@ -16,12 +16,31 @@ local lspconfig = require "lspconfig"
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "javascriptreact", "typescriptreact" },
-  root_dir = lspconfig.util.root_pattern( 'tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts' ),
+  filetypes = { "html", "javascript.jsx", "javascriptreact", "typescript.jsx", "typescriptreact" },
+  root_dir = lspconfig.util.root_pattern( "tailwind.config.js", "tailwind.config.ts", "postcss.config.js", "postcss.config.ts" ),
 }
 
-lspconfig.tsserver.setup {
-  autostart = false,
+lspconfig.vtsls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  -- root_dir = lspconfig.util.root_pattern( "package.json", "tsconfig.json", "jsconfig.json" )
+}
+
+lspconfig.texlab.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    texlab = {
+      build = {
+        args = { "-pdf", "-shell-escape", "-interaction=nonstopmode", "-synctex=1", "-auxdir=./aux", "%f" },
+        executable = "latexmk",
+        forwardSearchAfter = false,
+        onSave = false,
+      },
+      chktex = {
+        onEdit = false,
+        onOpenAndSave = false,
+      },
+    }
+  }
 }
