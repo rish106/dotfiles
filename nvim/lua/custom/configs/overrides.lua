@@ -34,6 +34,9 @@ M.treesitter = {
     "git_rebase",
     "make",
     "vim",
+    "vimdoc",
+    "toml",
+    "yaml",
   },
   indent = {
     enable = true,
@@ -51,6 +54,9 @@ M.mason = {
     -- web dev stuff
     "vtsls",
     "tailwindcss-language-server",
+
+    -- c/cpp
+    "clangd",
   },
 }
 
