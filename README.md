@@ -1,6 +1,6 @@
 # My Dotfiles
 
-<img width="1440" alt="image" src="images/wm.png">
+<img width="1440" alt="image" src="images/wm.jpg">
 
 | OS                | macOS Ventura     |
 | :--------------:  | :---------------: |
@@ -16,9 +16,9 @@
 | Browser           | Firefox (with [cascade](https://github.com/andreasgrafen/cascade)) |
 
 
-<img width="1440" alt="image" src="images/btop.png">
+<img width="1440" alt="image" src="images/btop.jpg">
 
-<img width="1440" alt="image" src="images/browser.png">
+<img width="1440" alt="image" src="images/browser.jpg">
 
 ## neovim setup
 I use NvChad with the radium theme. To use my config
@@ -33,6 +33,6 @@ nvim +PackerSync
 ```
 
 ## App Launcher
-<img width="867" alt="image" src="images/launcher.png">
+<img width="867" alt="image" src="images/launcher.jpg">
 
 Spawns an instance of terminal and runs the fuzzy finder on app directories using the popup and launcher scripts present in [scripts](https://github.com/rish106/dotfiles/blob/master/scripts)
