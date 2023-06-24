@@ -58,7 +58,7 @@ local plugins = {
 
   {
     "windwp/nvim-ts-autotag",
-    ft = { "html", "typescriptreact" },
+    ft = { "html", "javascriptreact", "jsx", "typescriptreact", "tsx" },
     opts = {},
   },
 
@@ -69,6 +69,15 @@ local plugins = {
     config = function (_, opts)
       require("presence").setup(opts)
     end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons"
+    },
+    opts = {},
   },
 
   -- To make a plugin not be loaded

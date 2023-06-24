@@ -127,6 +127,17 @@ M.luasnip = {
   }
 }
 
+M.trouble = {
+  n = {
+    ["<leader>hx"] = { "<cmd> TroubleToggle <CR>", "toggle trouble" },
+    ["<leader>hw"] = { "<cmd> TroubleToggle workspace_diagnostics <CR>", "toggle trouble" },
+    ["<leader>hd"] = { "<cmd> TroubleToggle document_diagnostics <CR>", "toggle trouble" },
+    ["<leader>hq"] = { "<cmd> TroubleToggle quickfix <CR>", "toggle trouble" },
+    ["<leader>hl"] = { "<cmd> TroubleToggle loclist <CR>", "toggle trouble" },
+    ["gR"] = { "<cmd> TroubleToggle lsp_references <CR>", "toggle trouble" },
+  }
+}
+
 vim.cmd[[
   augroup run_file
   autocmd BufEnter *.cpp let @g=":w\<CR> :40vsp | term g++-13 -std=c++17 -O2 \"%\" && ./a.out\<CR>i"

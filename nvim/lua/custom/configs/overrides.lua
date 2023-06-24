@@ -23,9 +23,14 @@ M.treesitter = {
     "go",
     "bash",
 
-    -- md/json
+    -- tex/md
+    "latex",
     "markdown",
+
+    -- json/toml/yaml
     "json",
+    "toml",
+    "yaml",
 
     -- misc
     "gitignore",
@@ -35,8 +40,6 @@ M.treesitter = {
     "make",
     "vim",
     "vimdoc",
-    "toml",
-    "yaml",
   },
   indent = {
     enable = true,
