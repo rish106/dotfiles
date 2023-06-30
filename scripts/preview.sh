@@ -7,8 +7,9 @@ HORIZONTAL_POS="${4}"
 VERTICAL_POS="${5}"
 
 image_preview() {
-    mediainfo "$FILE"
-    # kitty +kitten icat --transfer-mode file --stdin no --place "${PV_WIDTH}x${PV_HEIGHT}@${HORIZONTAL_POS}x${VERTICAL_POS}" "$FILE" < /dev/null > /dev/tty
+    # mediainfo "$FILE"
+    kitty +kitten icat --transfer-mode file --stdin no --place "${PV_WIDTH}x${PV_HEIGHT}@${HORIZONTAL_POS}x${VERTICAL_POS}" "$FILE" < /dev/null > /dev/tty
+    exit 1
 }
 
 case "$1" in
