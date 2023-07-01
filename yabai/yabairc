@@ -36,23 +36,26 @@ yabai -m config right_padding                28
 yabai -m config window_gap                   14
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Path Finder$" manage=off
 yabai -m rule --add app="^ProtonVPN$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Obsidian$" manage=off
+yabai -m rule --add app="^Mos$" manage=off
 
 # custom app launcher
-yabai -m rule --add title="mylauncher" sticky=on layer=above manage=off border=off
+yabai -m rule --add title="mylauncher" layer=above manage=off border=off
 
 # turn off borders for these apps
 yabai -m rule --add app="^VLC$" border=off
+yabai -m rule --add app="^IINA$" border=off
 
 # sketchybar
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
