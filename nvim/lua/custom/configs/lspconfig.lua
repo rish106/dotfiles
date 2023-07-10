@@ -49,3 +49,17 @@ lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          enabled = false,
+        },
+      },
+    },
+  },
+}

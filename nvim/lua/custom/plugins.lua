@@ -16,12 +16,7 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     commit = "950d0e3a93ba61c13b031c086d11eacf4bd48d24",
-    opts = function()
-      return require "custom.configs.cmp"
-    end,
-    config = function(_, opts)
-      require("cmp").setup(opts)
-    end,
+    opts = require "custom.configs.cmp"
   },
 
   -- override plugin configs
@@ -43,22 +38,13 @@ local plugins = {
   -- Install a plugin
   {
     "p00f/cphelper.nvim",
-    lazy = false,
+    event = "VeryLazy",
   },
 
   {
     "windwp/nvim-ts-autotag",
     ft = { "html", "javascriptreact", "jsx", "typescriptreact", "tsx" },
     opts = {},
-  },
-
-  {
-    "andweeb/presence.nvim",
-    lazy = false,
-    opts = {},
-    config = function (_, opts)
-      require("presence").setup(opts)
-    end,
   },
 
   {
