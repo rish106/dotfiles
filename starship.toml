@@ -5,22 +5,34 @@
 add_newline = true
 
 format = """
-[](#212428)\
+[](fg:#30303a)\
+${custom.os}\
+[](fg:#30303a bg:#212428)\
 $directory\
 [](fg:#212428 bg:#30303a)\
 $git_branch\
 $git_status\
 [ ](fg:#30303a)\
+$fill\
+$cmd_duration$jobs$memory_usage
+$character\
 """
- 
-# Disable the blank line at the start of the prompt
-# add_newline = false
+
+[fill]
+style = "bold fg:#30303a"
+symbol = ""
+
+[custom.os]
+when = true
+symbol = "󰀵 "
+style = "bg:#30303a"
+format = "[ $symbol]($style)"
  
 [directory]
-style = "bg:#212428 fg:#50cad2"
-format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+style = "bg:#212428 fg:#89dceb"
+format = "[ $path ]($style)"
  
 [git_branch]
 symbol = "󰘬"
@@ -30,3 +42,28 @@ format = '[[ $symbol $branch ](bg:#30303a fg:#37d99e)]($style)'
 [git_status]
 style = "bg:#30303a"
 format = '[[($all_status$ahead_behind )](bg:#30303a fg:#37d99e)]($style)'
+
+[cmd_duration]
+min_time = 0
+style = "yellow"
+format = "[   $duration]($style)"
+
+[jobs]
+symbol_threshold = 1
+number_threshold = 1
+symbol = " "
+style = "bg:#30303a"
+format = "[ $symbol$number]($style)"
+
+[memory_usage]
+disabled = false
+threshold = 0
+symbol = " "
+style = "bold dimmed white bg:#30303a"
+format = " [](fg:#30303a)[$symbol$ram_pct]($style)[](fg:#30303a)"
+
+[character]
+success_symbol = "[󱞩](bold green)"
+error_symbol = "[󱞩](bold red)"
+vimcmd_symbol = "[󱞩](bold cyan)"
+format = " $symbol "
