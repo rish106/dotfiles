@@ -25,10 +25,10 @@ sketchybar --bar     height=28                                              \
                      border_color=$GREY                                     \
                      sticky=on                                              \
                      y_offset=8                                             \
-                     padding_right=21                                       \
-                     padding_left=21                                        \
+                     padding_right=16                                       \
+                     padding_left=16                                        \
                      corner_radius=14                                       \
-                     margin=28                                              \
+                     margin=16                                              \
                      blur_radius=0                                          \
                      notch_width=0                                          \
                                                                             \
@@ -59,7 +59,7 @@ source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/ble_headset.sh"
-source "$ITEM_DIR/net.sh"
+source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/network.sh"
 
 ############## FINALIZING THE SETUP ##############
