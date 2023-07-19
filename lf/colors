@@ -176,4 +176,4 @@ fi      00      # FILE
 *.xspf  00;36
 
 # other formats
-*.pdf   02;31
+*.pdf   00;31

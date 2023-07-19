@@ -5,6 +5,7 @@
 add_newline = true
 
 format = """
+[╭─](fg:#30303a)\
 [](fg:#30303a)\
 ${custom.os}\
 [](fg:#30303a bg:#212428)\
@@ -15,23 +16,22 @@ $git_status\
 [ ](fg:#30303a)\
 $fill\
 $cmd_duration$jobs$memory_usage
-$character\
+[╰$character](fg:#30303a)\
 """
-
 [fill]
 style = "bold fg:#30303a"
-symbol = ""
+symbol = "─"
 
 [custom.os]
 when = true
 symbol = "󰀵 "
-style = "bg:#30303a"
+style = "bg:#30303a white"
 format = "[ $symbol]($style)"
  
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-style = "bg:#212428 fg:#89dceb"
+style = "bg:#212428 cyan"
 format = "[ $path ]($style)"
  
 [git_branch]
@@ -52,18 +52,18 @@ format = "[   $duration]($style)"
 symbol_threshold = 1
 number_threshold = 1
 symbol = " "
-style = "bg:#30303a"
+style = "cyan"
 format = "[ $symbol$number]($style)"
 
 [memory_usage]
 disabled = false
 threshold = 0
 symbol = " "
-style = "bold dimmed white bg:#30303a"
+style = "bold white bg:#30303a"
 format = " [](fg:#30303a)[$symbol$ram_pct]($style)[](fg:#30303a)"
 
 [character]
-success_symbol = "[󱞩](bold green)"
-error_symbol = "[󱞩](bold red)"
-vimcmd_symbol = "[󱞩](bold cyan)"
-format = " $symbol "
+success_symbol = "[─](bold gray)"
+error_symbol = "[─](bold gray)"
+vimcmd_symbol = "[─](bold gray)"
+format = "$symbol "
