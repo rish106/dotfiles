@@ -3,7 +3,9 @@ local opts = {
   updateevents = "TextChanged,TextChangedI"
 }
 
-require("luasnip").config.set_config(opts)
+local luasnip = require("luasnip")
+
+luasnip.config.set_config(opts)
 
 -- vscode format
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -19,3 +21,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     end
   end,
 })
+
+vim.keymap.set({"i", "s"}, "<C-d>", function() luasnip.jump(1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-u>", function() luasnip.jump(-1) end, {silent = true})

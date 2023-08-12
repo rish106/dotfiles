@@ -161,7 +161,6 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    keys = { "<leader>" },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },

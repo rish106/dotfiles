@@ -39,11 +39,27 @@ map("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", { silent = true })
 map("n", "J", "<cmd> BufferLineCyclePrev <CR>", { silent = true, noremap = true })
 map("n", "K", "<cmd> BufferLineCycleNext <CR>", { silent = true, noremap = true })
 
+-- Delete current buffer
+map("n", "<leader>d", "<cmd> bd <CR>", { silent = true, noremap = true })
+
 -- Copy everything in buffer
 map("n", "YY", "<cmd> %y+ <CR>", { silent = true, noremap = true })
 
 -- Trouble
 map("n", "<leader>v", "<cmd> TroubleToggle <CR>", { silent = true })
+
+-- Escape terminal mode
+map("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), { silent = true, noremap = true, desc = "Escape terminal mode"})
+
+-- Telescope
+map("n", "<leader>?", "<cmd> Telescope oldfiles <CR>", { desc = "[?] Find recently opened files" })
+map("n", "<leader><space>", "<cmd> Telescope buffers <CR>", { desc = "[ ] Find existing buffers" })
+map("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Search Git Files" })
+map("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Search Files" })
+map("n", "<leader>sh", "<cmd> Telescope help_tags <CR>", { desc = "Search Help" })
+map("n", "<leader>sw", "<cmd> Telescope grep_string <CR>", { desc = "Search current Word" })
+map("n", "<leader>sg", "<cmd> Telescope live_grep <CR>", { desc = "Search by Grep" })
+map("n", "<leader>sd", "<cmd> Telescope diagnostics <CR>", { desc = "Search Diagnostics" })
 
 vim.api.nvim_create_augroup("execute_code", {
   clear = true,
@@ -68,16 +84,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*.tex",
   command = "let @g=':TexlabBuild\n'",
 })
-
-
--- vim.cmd[[
---   augroup run_file
---   autocmd BufEnter *.cpp let @g=":w\<CR> :40vsp | term g++-13 -std=c++17 -O2 \"%\" && ./a.out\<CR>i"
---   autocmd BufEnter *.c let @g=":w\<CR> :40vsp | term gcc \"%\" && ./a.out\<CR>i"
---   autocmd BufEnter *.py let @g=":w\<CR>:40vsp | term python3 \"%\"\<CR>i"
---   autocmd BufEnter *.go let @g=":w\<CR>:40vsp | term go run \"%\"\<CR>i"
---   autocmd BufEnter *.sml let @g=":w\<CR>:40vsp | term sml <\"%\"\<CR>i"
---   autocmd BufEnter *.html let @g=":w\<CR>:40vsp | term npx parcel \"%\"\<CR>i"
---   autocmd BufEnter *.tex let @g=":TexlabBuild\<CR>"
---   augroup end
--- ]]

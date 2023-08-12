@@ -27,7 +27,7 @@ opt.colorcolumn = "100"
 -- Show current line number as absolute, others as relative
 opt.number = true
 
--- For current line number highlight
+-- Highlight current line number
 opt.cursorline = true
 opt.cursorlineopt = "number"
 
@@ -39,6 +39,9 @@ opt.showmode = false
 
 -- Custom snippets
 g.vscode_snippets_path = "~/.config/nvim/lua/snippets"
+
+-- Cphelper override
+g["cph#cpp#compile_command"] = "g++-13 solution.cpp -o cpp.out"
 
 -- Always show statusline
 opt.laststatus = 3
@@ -71,3 +74,8 @@ opt.completeopt = "menu,menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 opt.termguicolors = true
+
+-- Expand folds in Cphelper output
+vim.api.nvim_create_autocmd("FileType Results", {
+  command = "setlocal foldlevel=5",
+})
