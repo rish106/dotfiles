@@ -21,7 +21,7 @@ MIME_TYPE="$(file --dereference --brief --mime-type "$FILE")"
 
 case "$MIME_TYPE" in
     application/x-tar) tar tf "$FILE";;
-    application/zip) unizp -l "$FILE";;
+    application/zip) unzip -l "$FILE";;
     application/x-rar) unrar l "$FILE";;
     application/x-7z-compressed) 7z l "$FILE";;
     image/*) image_preview;;
