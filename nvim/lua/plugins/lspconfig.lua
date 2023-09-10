@@ -131,6 +131,9 @@ lspconfig.pylsp.setup {
         pycodestyle = {
           enabled = false,
         },
+        mccabe = {
+          threshold = 100,
+        },
       },
     },
   },

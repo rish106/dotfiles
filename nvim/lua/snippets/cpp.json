@@ -324,5 +324,49 @@
       "}"
     ],
     "description": "get k-th smallest element"
+  },
+  "kmp": {
+    "prefix": "kmp_match",
+    "body": [
+      "vector<int> compute_lps(string pat) {",
+      "\tint n = pat.size();",
+      "\tvector<int> lps(n);",
+      "\tlps[0] = 0;",
+      "\tfor (int i = 1; i < n; i++) {",
+      "\t\tlps[i] = 0;",
+      "\t\tint j = lps[i - 1]; /* trying length j + 1 */",
+      "\t\twhile (j > 0 && pat[j] != pat[i]) {",
+      "\t\t\tj = lps[j - 1];",
+      "\t\t}",
+      "\t\tif (pat[j] == pat[i]) {",
+      "\t\t\tlps[i] = j + 1;",
+      "\t\t}",
+      "\t}",
+      "\treturn lps;",
+      "}\n",
+      "vector<int> find_matches(string text, string pat) {",
+      "\tint n = pat.size(), m = text.size();",
+      "\tstring v = pat;",
+      "\tv.push_back(-1);",
+      "\tv.insert(v.end(), text.begin(), text.end());",
+      "\tvector<int> lps = compute_lps(v);",
+      "\tvector<int> ans;",
+      "\tfor (int i = n + 1; i <= n + m; i++) { // n + 1 is where the text starts",
+      "\t\tif (lps[i] == n) {",
+      "\t\t\tans.push_back(i - 2 * n); // i - (n - 1) - (n + 1)",
+      "\t\t}",
+      "\t}",
+      "\treturn ans;",
+      "}"
+    ],
+    "description": "find matches using KMP algorithm"
+  },
+  "ordered_set": {
+    "prefix": "ordered_set",
+    "body": [
+      "#include <ext/pb_ds/assoc_container.hpp>\n",
+      "typedef __gnu_pbds::tree<long long, __gnu_pbds::null_type, std::less<long long>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update> ordered_set;"
+    ],
+    "description": "ordered set with find by order and order of key methods"
   }
 }

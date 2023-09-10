@@ -40,9 +40,6 @@ opt.showmode = false
 -- Custom snippets
 g.vscode_snippets_path = "~/.config/nvim/lua/snippets"
 
--- Cphelper override
-g["cph#cpp#compile_command"] = "g++-13 solution.cpp -o cpp.out"
-
 -- Always show statusline
 opt.laststatus = 3
 
