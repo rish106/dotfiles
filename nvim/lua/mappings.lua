@@ -78,7 +78,7 @@ execute_code("cpp", "g++-13 -std=c++17 -O2 \"%\" && ./a.out")
 execute_code("py", "python3 \"%\"")
 execute_code("go", "go run \"%\"")
 execute_code("sml", "sml <\"%\"")
-execute_code("html", "npx parcel \"%\"")
+execute_code("html", "npx parcel \"%\" --port 3000")
 vim.api.nvim_create_autocmd("BufEnter", {
   group = "execute_code",
   pattern = "*.tex",

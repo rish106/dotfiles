@@ -113,6 +113,17 @@ lspconfig.texlab.setup {
         onEdit = false,
         onOpenAndSave = false,
       },
+      forwardSearch = {
+        executable = 'sioyek',
+        args = {
+          '--reuse-window',
+          '--execute-command', 'toggle_synctex', -- Open Sioyek in synctex mode.
+          '--inverse-search',
+          [[nvim-texlabconfig -file %%%1 -line %%%2 -server ]] .. vim.v.servername,
+          '--forward-search-file', '%f',
+          '--forward-search-line', '%l', '%p'
+        },
+      },
     }
   }
 }
@@ -140,6 +151,16 @@ lspconfig.pylsp.setup {
 }
 
 lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

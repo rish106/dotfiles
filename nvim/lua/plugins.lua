@@ -136,6 +136,7 @@ require("lazy").setup({
     config = function()
       require "plugins.blankline"
     end,
+    main = "ibl",
   },
 
   -- "gc" to comment visual regions/lines

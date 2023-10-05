@@ -1,18 +1,30 @@
-require("indent_blankline").setup {
-  indentLine_enabled = 1,
-  filetype_exclude = {
-    "help",
-    "terminal",
-    "lazy",
-    "lspinfo",
-    "TelescopePrompt",
-    "TelescopeResults",
-    "mason",
-    "",
+require("ibl").setup {
+  enabled = true,
+  exclude = {
+    filetypes = {
+      "help",
+      "terminal",
+      "lazy",
+      "lspinfo",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "mason",
+      "",
+    },
+    buftypes = {
+      "terminal",
+    }
   },
-  buftype_exclude = { "terminal" },
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  show_current_context = true,
-  show_current_context_start = true,
+  whitespace = {
+    remove_blankline_trail = true,
+  },
+  scope = {
+    enabled = false,
+  },
 }
+
+local hooks = require "ibl.hooks"
+hooks.register(
+  hooks.type.WHITESPACE,
+  hooks.builtin.hide_first_space_indent_level
+)
