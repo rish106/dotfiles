@@ -89,7 +89,7 @@ require("lazy").setup({
   -- Useful plugin to show you pending keybinds.
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", '"', "'", "`", "c", "v" },
+    keys = { "<leader>", '"', "'", "`", "c", "d" },
     opts = {},
   },
 
@@ -216,24 +216,9 @@ require("lazy").setup({
   },
 
   {
-    "akinsho/bufferline.nvim",
-    lazy = false,
-    version = "*",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
-      "catppuccin",
-    },
-    config = function()
-      require "plugins.bufferline"
-    end,
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    config = function()
-      require "plugins.nvimtree"
-    end,
-  },
+    "NvChad/nvim-colorizer.lua",
+    event = "BufRead",
+    opts = {},
+  }
 
 }, lazy_config)

@@ -13,32 +13,32 @@ require("catppuccin").setup {
   integrations = {
     cmp = true,
     gitsigns = true,
-    nvimtree = true,
-    treesitter = true,
-    telescope = {
-      enabled = true,
-    },
-    mason = true,
     indent_blankline = {
-      enable = true,
-    },
-    native_lsp = {
       enabled = true,
     },
     lsp_trouble = true,
+    mason = true,
+    native_lsp = {
+      enabled = true,
+    },
+    telescope = {
+      enabled = true,
+    },
+    treesitter = true,
     which_key = true,
   },
   custom_highlights = function(colors)
     return {
       CurSearch = { bg = colors.yellow },
-      CursorLineNr = { fg = colors.white },
+      CursorLineNr = { fg = colors.subtext0 },
+      CmpBorder = { fg = colors.subtext0, bg = colors.base },
+      Pmenu = { fg = colors.text, bg = colors.base },
+      PmenuSel = { fg = colors.text, bg = colors.surface0 },
+      LuaLineDiffAdd = { fg = colors.subtext0 },
+      LuaLineDiffChange = { fg = colors.subtext0 },
+      LuaLineDiffDelete = { fg = colors.subtext0 },
     }
   end,
 }
 
 vim.cmd.colorscheme "catppuccin"
-
-local colors = require("catppuccin.palettes").get_palette "mocha"
-vim.api.nvim_set_hl(0, "CmpBorder", { fg = colors.white, bg = colors.black })
-vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.black, bg = colors.white })
-vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = "#bac2de", bg = "#1e1e2e" })

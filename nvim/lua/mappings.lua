@@ -32,12 +32,12 @@ map("n", "<leader>fo", "<cmd> CphReceive <CR>", { silent = true, desc = "recieve
 map("n", "<leader>fj", "<cmd> CphTest <CR>", { silent = true, desc = "run on testcases" })
 
 -- Nvim tree
-map("n", "<leader>t", "<cmd> NvimTreeToggle <CR>", { silent = true })
-map("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", { silent = true })
+-- map("n", "<leader>t", "<cmd> NvimTreeToggle <CR>", { silent = true })
+-- map("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", { silent = true })
 
 -- Go to next/prev buffer
-map("n", "J", "<cmd> BufferLineCyclePrev <CR>", { silent = true, noremap = true })
-map("n", "K", "<cmd> BufferLineCycleNext <CR>", { silent = true, noremap = true })
+-- map("n", "J", "<cmd> BufferLineCyclePrev <CR>", { silent = true, noremap = true })
+-- map("n", "K", "<cmd> BufferLineCycleNext <CR>", { silent = true, noremap = true })
 
 -- Delete current buffer
 map("n", "<leader>d", "<cmd> bd <CR>", { silent = true, noremap = true })
@@ -52,8 +52,8 @@ map("n", "<leader>v", "<cmd> TroubleToggle <CR>", { silent = true })
 map("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), { silent = true, noremap = true, desc = "Escape terminal mode"})
 
 -- Telescope
-map("n", "<leader>?", "<cmd> Telescope oldfiles <CR>", { desc = "[?] Find recently opened files" })
-map("n", "<leader><space>", "<cmd> Telescope buffers <CR>", { desc = "[ ] Find existing buffers" })
+map("n", "<leader>rf", "<cmd> Telescope oldfiles <CR>", { desc = "Find recently opened files" })
+map("n", "<leader><space>", "<cmd> Telescope buffers <CR>", { desc = "Find existing buffers" })
 map("n", "<leader>gf", "<cmd> Telescope git_files <CR>", { desc = "Search Git Files" })
 map("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Search Files" })
 map("n", "<leader>sh", "<cmd> Telescope help_tags <CR>", { desc = "Search Help" })

@@ -1,18 +1,3 @@
-local function git()
-  if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
-    return ""
-  end
-
-  local git_status = vim.b.gitsigns_status_dict
-
-  local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
-  local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
-  local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
-  local branch_name = " " .. git_status.head
-
-  return branch_name .. added .. changed .. removed
-end
-
 local function lsp_progress()
   if not rawget(vim, "lsp") or vim.lsp.status then
     return ""
@@ -39,19 +24,15 @@ local function lsp_status()
   if rawget(vim, "lsp") then
     for _, client in ipairs(vim.lsp.get_active_clients()) do
       if client.attached_buffers[vim.api.nvim_get_current_buf()] then
-        return (vim.o.columns > 100 and "   LSP ~ " .. client.name .. " ") or "   LSP "
+        return (vim.o.columns > 100 and "  " .. client.name ) or "  LSP"
       end
     end
   end
   return ""
 end
 
-local colors = require("catppuccin.palettes").get_palette "mocha"
-
-local custom_catppuccin = require("lualine.themes.gruvbox")
-
-custom_catppuccin.normal.c.bg = "#11111b"
-custom_catppuccin.insert.c.bg = "#11111b"
+local colors = require("catppuccin.palettes").get_palette("mocha")
+colors.old_base = "#1e1e2e"
 
 require("lualine").setup {
   options = {
@@ -67,20 +48,70 @@ require("lualine").setup {
     lualine_a = {
       {
         "mode",
-        separator = { left = "", right = "" }
+        padding = 0,
+        separator = { left = "", right = "" },
       },
     },
     lualine_b = {
       {
-        function() return git() end,
+        "filetype",
+        colored = true,
+        icon_only = true,
+        padding = {
+          left = 1,
+          right = 0,
+        },
+        color = {
+          bg = colors.old_base,
+        },
+      },
+      {
+        "filename",
+        separator = { right = "" },
+        padding = {
+          left = 1,
+          right = 0,
+        },
+        symbols = {
+          modified = "",
+          readonly = "󰌾",
+        },
+        color = {
+          fg = colors.text,
+          bg = colors.old_base,
+        },
+      },
+    },
+    lualine_c = {
+      {
+        "branch",
+        padding = {
+          left = 1,
+          right = 0,
+        },
+        colored = true,
+        icon = "",
         separator = { right = "" },
         color = {
           bg = colors.surface0,
           fg = colors.text,
         },
-      }
-    },
-    lualine_c = {
+      },
+      {
+        "diff",
+        padding = {
+          left = 1,
+          right = 0,
+        },
+        colored = true,
+        diff_color = {
+          added    = "LuaLineDiffAdd",
+          modified = "LuaLineDiffChange",
+          removed  = "LuaLineDiffDelete",
+        },
+        symbols = {added = " ", modified = " ", removed = " "},
+        source = nil,
+      },
       "%=",
       {
         function() return lsp_progress() end,
@@ -90,8 +121,14 @@ require("lualine").setup {
       }
     },
     lualine_x = {
+    },
+    lualine_y = {
       {
         "diagnostics",
+        padding = {
+          left = 0,
+          right = 1,
+        },
         sources = { "nvim_lsp", "nvim_diagnostic" },
         sections = { "error", "warn", "info", "hint" },
 
@@ -110,16 +147,20 @@ require("lualine").setup {
         colored = true,
         update_in_insert = false,
         always_visible = false,
+        separator = {},
       },
+    },
+    lualine_z = {
       {
         function() return lsp_status() end,
+        separator = { left = "", right = "" },
+        padding = 0,
         color = {
-          fg = colors.subtext0,
+          fg = colors.subtext1,
+          bg = colors.surface0,
         }
       },
     },
-    lualine_y = {},
-    lualine_z = {},
   },
   inactive_sections = {
     lualine_a = {},

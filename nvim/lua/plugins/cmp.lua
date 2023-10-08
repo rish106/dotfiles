@@ -1,5 +1,5 @@
-local cmp = require "cmp"
-local luasnip = require "luasnip"
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local function border(hl_name)
   return {
@@ -88,7 +88,6 @@ cmp.setup {
     completion = {
       side_padding = 1,
       border = border "CmpBorder",
-      winhighlight = "Normal:PMenu,Search:PmenuSel",
       scrollbar = false,
     },
     documentation = {
