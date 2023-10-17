@@ -38,7 +38,7 @@ opt.splitbelow = false
 opt.showmode = false
 
 -- Custom snippets
-g.vscode_snippets_path = "~/.config/nvim/lua/snippets"
+g.vscode_snippets_path = "~/.config/nvim/snippets"
 
 -- Always show statusline
 opt.laststatus = 3
@@ -73,6 +73,9 @@ opt.completeopt = "menu,menuone,noselect"
 opt.termguicolors = true
 
 -- Expand folds in Cphelper output
-vim.api.nvim_create_autocmd("FileType Results", {
-  command = "setlocal foldlevel=5",
-})
+vim.cmd[[
+  autocmd FileType Results setlocal foldlevel=5
+]]
+-- vim.api.nvim_create_autocmd("FileType Results", {
+--  command = "setlocal foldlevel=5",
+-- })

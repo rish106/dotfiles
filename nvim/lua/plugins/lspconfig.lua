@@ -85,19 +85,6 @@ lspconfig.lua_ls.setup {
   },
 }
 
-lspconfig.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "html", "javascript.jsx", "javascriptreact", "typescript.jsx", "typescriptreact" },
-  root_dir = lspconfig.util.root_pattern( "tailwind.config.js", "tailwind.config.ts", "postcss.config.js", "postcss.config.ts" ),
-}
-
-lspconfig.vtsls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  -- root_dir = lspconfig.util.root_pattern( "package.json", "tsconfig.json", "jsconfig.json" )
-}
-
 lspconfig.texlab.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -151,16 +138,6 @@ lspconfig.pylsp.setup {
 }
 
 lspconfig.gopls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.html.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

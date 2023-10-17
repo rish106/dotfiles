@@ -31,13 +31,9 @@ map("n", "<leader>fw", "@g", { silent = true })
 map("n", "<leader>fo", "<cmd> CphReceive <CR>", { silent = true, desc = "recieve testcases" })
 map("n", "<leader>fj", "<cmd> CphTest <CR>", { silent = true, desc = "run on testcases" })
 
--- Nvim tree
--- map("n", "<leader>t", "<cmd> NvimTreeToggle <CR>", { silent = true })
--- map("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", { silent = true })
-
 -- Go to next/prev buffer
--- map("n", "J", "<cmd> BufferLineCyclePrev <CR>", { silent = true, noremap = true })
--- map("n", "K", "<cmd> BufferLineCycleNext <CR>", { silent = true, noremap = true })
+map("n", "J", "<cmd> bnext <CR>", { silent = true, noremap = true })
+map("n", "K", "<cmd> bprev <CR>", { silent = true, noremap = true })
 
 -- Delete current buffer
 map("n", "<leader>d", "<cmd> bd <CR>", { silent = true, noremap = true })
