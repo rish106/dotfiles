@@ -29,7 +29,7 @@ alt - g : yabai -m space --toggle padding; \
 
 # float / unfloat window and center on screen
 alt - t : yabai -m window --toggle float; \
-          yabai -m window --grid 4:4:1:1:2:2; \
+          yabai -m window --grid 6:6:1:1:4:4; \
           sketchybar --trigger window_focus
 
 # toggle window split type
