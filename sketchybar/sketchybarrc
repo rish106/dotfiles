@@ -24,11 +24,11 @@ sketchybar --bar     height=28                                              \
                      border_width=1                                         \
                      border_color=$GREY                                     \
                      sticky=on                                              \
-                     y_offset=8                                             \
-                     padding_right=16                                       \
-                     padding_left=16                                        \
-                     corner_radius=14                                       \
-                     margin=16                                              \
+                     y_offset=-1                                            \
+                     padding_right=24                                       \
+                     padding_left=25                                        \
+                     corner_radius=0                                        \
+                     margin=-1                                              \
                      blur_radius=0                                          \
                      notch_width=0                                          \
                                                                             \
