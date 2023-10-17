@@ -1,6 +1,6 @@
 # Basic Settings
-set previewer "~/.config/scripts/preview.sh"
-set cleaner "~/.config/scripts/cleaner.sh"
+set previewer "~/.config/lf/preview.sh"
+set cleaner "~/.config/lf/cleaner.sh"
 set preview
 set hidden
 set icons
@@ -19,12 +19,6 @@ cmd open ${{
 }}
 
 cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans
-
-# cmd mkdir ${{
-#     printf "Directory Name: "
-#     read ans
-#     mkdir $ans
-# }}
 
 cmd mkfile %printf "File Name: "; read ans; touch $ans
 
