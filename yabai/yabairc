@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
+# scripting addition
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -13,10 +15,10 @@ yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
-yabai -m config window_border                on
-yabai -m config window_border_width          1
-yabai -m config active_window_border_color   0XFFD4D4D5
-yabai -m config normal_window_border_color   0XFF3E4145
+# yabai -m config window_border                on
+# yabai -m config window_border_width          1
+# yabai -m config active_window_border_color   0XFFD4D4D5
+# yabai -m config normal_window_border_color   0XFF3E4145
 yabai -m config insert_feedback_color        0XFF37D99E
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
@@ -28,8 +30,8 @@ yabai -m config window_animation_duration    0.35
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config external_bar                 all:37:0
-yabai -m config top_padding                  0
+yabai -m config external_bar                 all:28:0
+yabai -m config top_padding                  8
 yabai -m config bottom_padding               8
 yabai -m config left_padding                 8
 yabai -m config right_padding                8
@@ -51,17 +53,11 @@ yabai -m rule --add app="^Obsidian$" manage=off
 yabai -m rule --add app="^Mos$" manage=off
 
 # custom app launcher
-yabai -m rule --add title="mylauncher" layer=above manage=off border=off
-
-# turn off borders for these apps
-yabai -m rule --add app="^VLC$" border=off
-yabai -m rule --add app="^IINA$" border=off
+yabai -m rule --add title="mylauncher" layer=above manage=off
 
 # sketchybar
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
-launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
 echo "yabai configuration loaded.."
