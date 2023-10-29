@@ -129,7 +129,7 @@ require("lualine").setup {
           left = 0,
           right = 1,
         },
-        sources = { "nvim_lsp", "nvim_diagnostic" },
+        sources = { "nvim_diagnostic" },
         sections = { "error", "warn", "info", "hint" },
 
         diagnostics_color = {
