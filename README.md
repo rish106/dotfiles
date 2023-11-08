@@ -1,6 +1,6 @@
 # My Dotfiles
 
-<img width="1440" alt="image" src="images/wm.jpg">
+<img width="1440" alt="image" src="images/fullscreen.jpg">
 
 | OS                | macOS Ventura     |
 | :--------------:  | :---------------: |
