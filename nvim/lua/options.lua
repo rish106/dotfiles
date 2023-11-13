@@ -37,6 +37,8 @@ opt.splitbelow = false
 -- Don't show things like "insert" mode in the cmdline area
 opt.showmode = false
 
+g["cph#cpp#compile_command"] = "g++ -ld_classic solution.cpp -o cpp.out"
+
 -- Custom snippets
 g.vscode_snippets_path = "~/.config/nvim/snippets"
 
