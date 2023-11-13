@@ -2,13 +2,13 @@
 
 TITLE=mylauncher
 
-SCREEN_WIDTH=`yabai -m query --displays --display | jq .frame.w*2`
-SCREEN_HEIGHT=`yabai -m query --displays --display | jq .frame.h*2`
+SCREEN_WIDTH=`yabai -m query --displays --display 1 | jq .frame.w*2`
+SCREEN_HEIGHT=`yabai -m query --displays --display 1 | jq .frame.h*2`
 
 TERM_WIDTH=1440
-TERM_HEIGHT=2160
+TERM_HEIGHT=900
 
 let "X=SCREEN_WIDTH/2-TERM_WIDTH/2"
 let "Y=SCREEN_HEIGHT/2-TERM_HEIGHT/2"
 
-alacritty -t "${TITLE}" -o window.position.x="${X}" -o window.position.y="${Y}" -o window.dimensions.lines=10 -o window.dimensions.columns=60 -o font.size=20 -o window.decorations=none --working-directory "$(pwd)" -e "$1"
+alacritty -t "${TITLE}" -o window.position.x="${X}" -o window.position.y="${Y}" -o window.dimensions.lines=10 -o window.dimensions.columns=60 -o font.size=20 -o window.decorations=buttonless --working-directory "$(pwd)" -e "$1"
