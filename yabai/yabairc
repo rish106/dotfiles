@@ -9,7 +9,6 @@ yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_origin_display        default
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
 yabai -m config window_shadow                off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
@@ -37,23 +36,26 @@ yabai -m config left_padding                 8
 yabai -m config right_padding                8
 yabai -m config window_gap                   8
 
+# Set all windows layer to normal
+yabai -m rule --add app=".*" layer=normal
+
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Disk Utility$" manage=off
-yabai -m rule --add app="^System Information$" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^Archive Utility$" manage=off
-yabai -m rule --add app="^Digital Colour Meter$" manage=off
-yabai -m rule --add app="^ProtonVPN$" manage=off
-yabai -m rule --add app="^Preview$" manage=off
-yabai -m rule --add app="^Obsidian$" manage=off
-yabai -m rule --add app="^Mos$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off layer=normal
+yabai -m rule --add app="^Karabiner-Elements$" manage=off layer=normal
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off layer=normal
+yabai -m rule --add app="^Finder$" manage=off layer=normal
+yabai -m rule --add app="^Disk Utility$" manage=off layer=normal
+yabai -m rule --add app="^System Information$" manage=off layer=normal
+yabai -m rule --add app="^Activity Monitor$" manage=off layer=normal
+yabai -m rule --add app="^Archive Utility$" manage=off layer=normal
+yabai -m rule --add app="^Digital Colour Meter$" manage=off layer=normal
+yabai -m rule --add app="^ProtonVPN$" manage=off layer=normal
+yabai -m rule --add app="^Preview$" manage=off layer=normal
+yabai -m rule --add app="^Obsidian$" manage=off layer=normal
+yabai -m rule --add app="^Mos$" manage=off layer=normal
 
 # custom app launcher
-yabai -m rule --add title="mylauncher" layer=above manage=off
+yabai -m rule --add title="mylauncher" manage=off layer=above
 
 # sketchybar
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
