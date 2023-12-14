@@ -8,4 +8,4 @@ sketchybar  --add item      network right                               \
                             icon.font="SFMono Nerd Font:Medium:18.0"    \
                             label.padding_right=4                       \
                             update_freq=1                               \
-                            script="$PLUGIN_DIR/network.sh"
+                            script="$PLUGIN_DIR/network_speed.sh"

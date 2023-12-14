@@ -11,6 +11,7 @@ update() {
     if [[ $CURRENT -gt 0 ]]; then
         LAST=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
         args+=(--set $NAME icon=$YABAI_STACK icon.color=$STACKED_WINDOW_COLOR label.drawing=on label=$(printf "[%s/%s]" "$CURRENT" "$LAST"))
+        borders active_color=$STACKED_WINDOW_COLOR
         # yabai -m config active_window_border_color $STACKED_WINDOW_COLOR > /dev/null 2>&1 &
 
     else 
@@ -19,17 +20,21 @@ update() {
             "false")
                 if [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
                     args+=(--set $NAME icon=$YABAI_FULLSCREEN_ZOOM icon.color=$FULLSCREEN_WINDOW_COLOR)
+                    borders active_color=$FULLSCREEN_WINDOW_COLOR
                     # yabai -m config active_window_border_color $FULLSCREEN_WINDOW_COLOR > /dev/null 2>&1 &
                 elif [ "$(echo "$WINDOW" | jq '.["has-parent-zoom"]')" = "true" ]; then
                     args+=(--set $NAME icon=$YABAI_PARENT_ZOOM icon.color=$PARENT_ZOOM_WINDOW_COLOR)
+                    borders active_color=$PARENT_ZOOM_WINDOW_COLOR
                     # yabai -m config active_window_border_color $PARENT_ZOOM_WINDOW_COLOR > /dev/null 2>&1 &
                 else
                     args+=(--set $NAME icon=$YABAI_GRID icon.color=$ACTIVE_WINDOW_COLOR)
+                    borders active_color=$ACTIVE_WINDOW_COLOR
                     # yabai -m config active_window_border_color $ACTIVE_WINDOW_COLOR > /dev/null 2>&1 &
                 fi
                 ;;
             "true")
                 args+=(--set $NAME icon=$YABAI_FLOAT icon.color=$FLOATING_WINDOW_COLOR)
+                borders active_color=$FLOATING_WINDOW_COLOR
                 # yabai -m config active_window_border_color $FLOATING_WINDOW_COLOR > /dev/null 2>&1 &
                 ;;
         esac
