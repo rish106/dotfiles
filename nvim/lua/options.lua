@@ -78,6 +78,6 @@ opt.termguicolors = true
 vim.cmd[[
   autocmd FileType Results setlocal foldlevel=5
 ]]
--- vim.api.nvim_create_autocmd("FileType Results", {
---  command = "setlocal foldlevel=5",
--- })
+
+-- Disable Lsp logs
+vim.lsp.set_log_level(vim.log.levels.OFF)

@@ -70,7 +70,7 @@ local function execute_code(extension, command)
 end
 
 execute_code("c", "gcc \"%\" && ./a.out")
-execute_code("cpp", "g++ -ld_classic -std=c++17 -O2 \"%\" && ./a.out")
+execute_code("cpp", "g++ -std=c++20 -O2 \"%\" && ./a.out")
 execute_code("py", "python3 \"%\"")
 execute_code("go", "go run \"%\"")
 execute_code("sml", "sml <\"%\"")
