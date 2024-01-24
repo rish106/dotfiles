@@ -1,0 +1,210 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+duration = 0
+
+[[colors.indexed_colors]]
+color = "#FAB387"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#F5E0DC"
+index = 17
+
+[colors.bright]
+black = "#585B70"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#A6ADC8"
+yellow = "#F9E2AF"
+
+[colors.cursor]
+cursor = "#F5E0DC"
+text = "#11111b"
+
+[colors.dim]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[colors.hints.end]
+background = "#A6ADC8"
+foreground = "#11111b"
+
+[colors.hints.start]
+background = "#F9E2AF"
+foreground = "#11111b"
+
+[colors.normal]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[colors.primary]
+background = "#11111b"
+bright_foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+foreground = "#CDD6F4"
+
+[colors.search.focused_match]
+background = "#A6E3A1"
+foreground = "#11111b"
+
+[colors.footer_bar]
+background = "#A6ADC8"
+foreground = "#11111b"
+
+[colors.search.matches]
+background = "#A6ADC8"
+foreground = "#11111b"
+
+[colors.selection]
+background = "#F5E0DC"
+text = "#11111b"
+
+[colors.vi_mode_cursor]
+cursor = "#B4BEFE"
+text = "#11111b"
+
+[cursor]
+thickness = 0.15
+unfocused_hollow = true
+
+[cursor.style]
+shape = "block"
+blinking = "Off"
+
+[env]
+LC_ALL = "en_US.UTF-8"
+TERM = "xterm-256color"
+
+[font]
+size = 15.0
+
+[font.bold]
+family = "GeistMono Nerd Font"
+style = "Semibold"
+
+[font.italic]
+family = "GeistMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "GeistMono Nerd Font"
+style = "Medium"
+
+[[keyboard.bindings]]
+chars = "\u0001T"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001n"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001p"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0001,"
+key = "R"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00011"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00012"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00013"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00014"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00015"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00016"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00017"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00018"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00019"
+key = "Key9"
+mods = "Command"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+dynamic_title = true
+opacity = 1.0
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 136
+lines = 42
+
+[window.padding]
+x = 8
+y = 8
+
+[window.position]
+x = 0
+y = 0
