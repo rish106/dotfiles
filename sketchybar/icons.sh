@@ -15,8 +15,9 @@ BATTERY_25=􀛩
 BATTERY_0=􀛪
 BATTERY_CHARGING=􀢋
 
-# Headset Icon
+# Bluetooth
 HEADSET=􀑈
+BLUETOOTH_ON=󰂯
 
 # Wifi Icons
 WIFI_OFF=􀙈

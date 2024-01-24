@@ -9,7 +9,7 @@ UPDOWN="$(ifstat -i "en0" 0.1 1 | tail -n 1)"
 DOWN_SPEED=$(($(echo "$UPDOWN" | awk "{ print \$1 }" | cut -f 1 -d ".")))
 UP_SPEED=$(($(echo "$UPDOWN" | awk "{ print \$2 }" | cut -f 1 -d ".")))
 
-if [ "$AIRPORT" -eq "Off" ] || [ -z "$LABEL" ]; then
+if [ "$AIRPORT" == "Off" ] || [ -z "$LABEL" ]; then
     sketchybar -m --set network icon.drawing=off
 elif [ $UP_SPEED -gt $DOWN_SPEED ]; then
     sketchybar -m --set network icon.drawing=on icon=$UPLOAD
