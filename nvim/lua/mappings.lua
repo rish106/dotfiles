@@ -35,6 +35,10 @@ map("n", "<leader>fj", "<cmd> CphTest <CR>", { silent = true, desc = "run on tes
 map("n", "J", "<cmd> bnext <CR>", { silent = true, noremap = true })
 map("n", "K", "<cmd> bprev <CR>", { silent = true, noremap = true })
 
+-- Move lines up/down
+map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, noremap = true })
+map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, noremap = true })
+
 -- Delete current buffer
 map("n", "<leader>d", "<cmd> bd <CR>", { silent = true, noremap = true })
 
@@ -65,16 +69,18 @@ local function execute_code(extension, command)
   vim.api.nvim_create_autocmd("BufEnter", {
     group = "execute_code",
     pattern = "*." .. extension,
-    command = "let @g=':40vsp | term " .. command .. "\n i'",
+    command = "let @g=':40vsp | term " .. command .. "\ni'",
   })
 end
 
 execute_code("c", "gcc \"%\" && ./a.out")
 execute_code("cpp", "g++ -std=c++20 -O2 \"%\" && ./a.out")
+execute_code("java", "java \"%\"")
 execute_code("py", "python3 \"%\"")
 execute_code("go", "go run \"%\"")
 execute_code("sml", "sml <\"%\"")
 execute_code("html", "npx parcel \"%\" --port 3000")
+execute_code("pl", "swipl -q -l \"%\"")
 vim.api.nvim_create_autocmd("BufEnter", {
   group = "execute_code",
   pattern = "*.tex",

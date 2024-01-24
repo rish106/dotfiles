@@ -25,18 +25,6 @@ require("lazy").setup({
     end,
   },
 
-  {
-    "m4xshen/hardtime.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      disabled_filetypes = { "netrw", "lazy", "mason" },
-    },
-  },
-
   -- LSP Configuration & Plugins
   {
     "neovim/nvim-lspconfig",
@@ -231,6 +219,32 @@ require("lazy").setup({
     "NvChad/nvim-colorizer.lua",
     event = "BufRead",
     opts = {},
-  }
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require "plugins.harpoon"
+    end,
+    event = "VeryLazy",
+  },
+
+  {
+    "ThePrimeagen/vim-be-good",
+    cmd = { "VimBeGood" },
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 
 }, lazy_config)

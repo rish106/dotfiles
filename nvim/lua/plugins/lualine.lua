@@ -39,7 +39,8 @@ require("lualine").setup {
     icons_enabled = true,
     theme = "catppuccin",
     component_separators = "",
-    section_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
     refresh = {
       statusline = 200,
     }
@@ -48,8 +49,8 @@ require("lualine").setup {
     lualine_a = {
       {
         "mode",
-        padding = 0,
-        separator = { left = "", right = "" },
+        padding = 1,
+        -- separator = { left = "", right = "" },
       },
     },
     lualine_b = {
@@ -67,10 +68,10 @@ require("lualine").setup {
       },
       {
         "filename",
-        separator = { right = "" },
+        -- separator = { right = "" },
         padding = {
           left = 1,
-          right = 0,
+          right = 1,
         },
         symbols = {
           modified = "",
@@ -87,11 +88,11 @@ require("lualine").setup {
         "branch",
         padding = {
           left = 1,
-          right = 0,
+          right = 1,
         },
         colored = true,
         icon = "",
-        separator = { right = "" },
+        -- separator = { right = "" },
         color = {
           bg = colors.surface0,
           fg = colors.text,
@@ -153,8 +154,8 @@ require("lualine").setup {
     lualine_z = {
       {
         function() return lsp_status() end,
-        separator = { left = "", right = "" },
-        padding = 0,
+        -- separator = { left = "", right = "" },
+        padding = 1,
         color = {
           fg = colors.subtext1,
           bg = colors.surface0,
