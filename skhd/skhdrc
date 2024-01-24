@@ -92,10 +92,10 @@ cmd + ctrl - l  : yabai -m window east --stack $(yabai -m query --windows --wind
                   sketchybar --trigger window_focus
 
 # mpd
-alt - i : mpc toggle
+alt - i : mpc toggle &> /dev/null
 
 # bluetooth toggle
-alt - 0 : blueutil -p | grep 1 && blueutil -p 0 || blueutil -p 1
+alt - 0 : (blueutil -p | grep 1 && blueutil -p 0 || blueutil -p 1) &> /dev/null
 
 # new window of app in current desktop
 cmd - return : open -n -a kitty
