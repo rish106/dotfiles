@@ -57,6 +57,9 @@ yabai -m rule --add app="^Mos$" manage=off layer=normal
 # custom app launcher
 yabai -m rule --add title="mylauncher" manage=off layer=above
 
+# keep pdf viewer in doc space
+yabai -m rule --add app="^sioyek$" space=3
+
 # sketchybar
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
