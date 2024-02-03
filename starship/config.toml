@@ -7,15 +7,8 @@ add_newline = true
 format = """
 $directory\
 $git_branch\
-$git_status\
-[ ](fg:#313244)\
+$git_status \
 """
-
-[custom.os]
-when = true
-symbol = " 󰀵 "
-style = "bg:#313244 white"
-format = "[$symbol]($style)"
 
 [directory]
 truncation_length = 3
@@ -25,9 +18,21 @@ format = "[ $path ]($style)"
  
 [git_branch]
 symbol = "󰘬"
-style = "bg:#313244"
-format = '[[ $symbol $branch ](bg:#313244 green)]($style)'
+style = "bg:#313244 green"
+format = '[ $symbol $branch ]($style)'
  
 [git_status]
-style = "bg:#313244"
-format = '[[($all_status$ahead_behind )](bg:#313244 green)]($style)'
+style = "bg:#313244 green"
+format = '[$all_status$ahead_behind ]($style)'
+conflicted = "="
+ahead = "󱦲"
+behind = "󱦳"
+diverged = "↕"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "󰐕"
+renamed = ""
+deleted = "✕"
+typechanged = ""
