@@ -3,21 +3,29 @@ export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 
 export C_INCLUDE_PATH="$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin23/13/include:\
-    $HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin23/13/include-fixed:\
-    /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include"
+$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin23/13/include-fixed:\
+$HOMEBREW_PREFIX/include:\
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include"
 export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include/c++/13/aarch64-apple-darwin23:\
-    $HOMEBREW_PREFIX/include/c++/13:$HOMEBREW_PREFIX/include"
+$HOMEBREW_PREFIX/include/c++/13:\
+$HOMEBREW_PREFIX/include"
+
+export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 
 take() {
     mkdir -p "$1"
     cd "$1"
 }
 
-export PATH="$PATH:$HOMEBREW_REPOSITORY/opt/postgresql@15/bin"
+export PATH="$PATH:/opt/homebrew/opt/postgresql@15/bin"
+
+# ocaml package manager - opam configuration
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # VIM MODE
 bindkey -v
 bindkey "^?" backward-delete-char
+export KEYTIMEOUT=1
 
 # fzf
 source "$HOME/.fzf.zsh"
@@ -54,9 +62,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
 source "$HOME/.config/zsh/aliases.zsh"
-
-# tmux session manager
-export PATH="$PATH:$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin"
 
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
