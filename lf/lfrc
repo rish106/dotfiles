@@ -108,6 +108,7 @@ map e
 map f
 map t
 map i
+map w
 
 # File Openers
 map ee $$EDITOR "$f"
