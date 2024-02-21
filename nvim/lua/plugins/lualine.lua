@@ -1,3 +1,62 @@
+-- stylua: ignore
+local mode_map = {
+  ['n']      = 'N',
+  ['no']     = 'O-P',
+  ['nov']    = 'O-P',
+  ['noV']    = 'O-P',
+  ['no\22']  = 'O-P',
+  ['niI']    = 'N',
+  ['niR']    = 'N',
+  ['niV']    = 'N',
+  ['nt']     = 'N',
+  ['ntT']    = 'N',
+  ['v']      = 'V',
+  ['vs']     = 'V',
+  ['V']      = 'V-L',
+  ['Vs']     = 'V-L',
+  ['\22']    = 'V-B',
+  ['\22s']   = 'V-B',
+  ['s']      = 'S',
+  ['S']      = 'S-L',
+  ['\19']    = 'S-B',
+  ['i']      = 'I',
+  ['ic']     = 'I',
+  ['ix']     = 'I',
+  ['R']      = 'R',
+  ['Rc']     = 'R',
+  ['Rx']     = 'R',
+  ['Rv']     = 'V-R',
+  ['Rvc']    = 'V-R',
+  ['Rvx']    = 'V-R',
+  ['c']      = 'C',
+  ['cv']     = 'EX',
+  ['ce']     = 'EX',
+  ['r']      = 'R',
+  ['rm']     = 'MORE',
+  ['r?']     = 'CONFIRM',
+  ['!']      = 'SH',
+  ['t']      = 'TERM',
+}
+
+local function vim_mode()
+  local mode_code = vim.api.nvim_get_mode().mode
+  if mode_map[mode_code] == nil then
+    return mode_code
+  end
+  return mode_map[mode_code]
+end
+
+local function diff_source()
+  local gitsigns = vim.b.gitsigns_status_dict
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed
+    }
+  end
+end
+
 local function lsp_progress()
   if not rawget(vim, "lsp") or vim.lsp.status then
     return ""
@@ -31,15 +90,20 @@ local function lsp_status()
   return ""
 end
 
+local function location()
+  local line = vim.fn.line('.')
+  local col = vim.fn.virtcol('.')
+  return string.format('%d:%d', line, col)
+end
+
 local colors = require("catppuccin.palettes").get_palette("mocha")
-colors.old_base = "#1e1e2e"
+local old_base = "#1e1e2e"
 
 require("lualine").setup {
   options = {
     icons_enabled = true,
     theme = "catppuccin",
     component_separators = "",
-    -- section_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     refresh = {
       statusline = 200,
@@ -48,9 +112,8 @@ require("lualine").setup {
   sections = {
     lualine_a = {
       {
-        "mode",
+        function() return vim_mode() end,
         padding = 1,
-        -- separator = { left = "", right = "" },
       },
     },
     lualine_b = {
@@ -63,12 +126,11 @@ require("lualine").setup {
           right = 0,
         },
         color = {
-          bg = colors.old_base,
+          bg = old_base,
         },
       },
       {
         "filename",
-        -- separator = { right = "" },
         padding = {
           left = 1,
           right = 1,
@@ -79,7 +141,7 @@ require("lualine").setup {
         },
         color = {
           fg = colors.text,
-          bg = colors.old_base,
+          bg = old_base,
         },
       },
     },
@@ -92,7 +154,6 @@ require("lualine").setup {
         },
         colored = true,
         icon = "",
-        -- separator = { right = "" },
         color = {
           bg = colors.surface0,
           fg = colors.text,
@@ -111,19 +172,17 @@ require("lualine").setup {
           removed  = "LuaLineDiffDelete",
         },
         symbols = {added = " ", modified = " ", removed = " "},
-        source = nil,
+        source = diff_source,
       },
       "%=",
-      {
-        function() return lsp_progress() end,
-        color = {
-          fg = colors.green,
-        }
-      }
+      -- {
+      --   function() return lsp_progress() end,
+      --   color = {
+      --     fg = colors.green,
+      --   }
+      -- }
     },
     lualine_x = {
-    },
-    lualine_y = {
       {
         "diagnostics",
         padding = {
@@ -148,18 +207,23 @@ require("lualine").setup {
         colored = true,
         update_in_insert = false,
         always_visible = false,
-        separator = {},
       },
+    },
+    lualine_y = {
     },
     lualine_z = {
       {
         function() return lsp_status() end,
-        -- separator = { left = "", right = "" },
         padding = 1,
         color = {
-          fg = colors.subtext1,
+          fg = colors.text,
           bg = colors.surface0,
         }
+      },
+      {
+        function() return location() end,
+        colored = true,
+        padding = 1,
       },
     },
   },

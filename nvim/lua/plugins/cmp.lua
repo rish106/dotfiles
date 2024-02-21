@@ -1,7 +1,20 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-local function border(hl_name)
+local function solid_border(hl_name)
+  return {
+    { "┏", hl_name },
+    { "━", hl_name },
+    { "┓", hl_name },
+    { "┃", hl_name },
+    { "┛", hl_name },
+    { "━", hl_name },
+    { "┗", hl_name },
+    { "┃", hl_name },
+  }
+end
+
+local function rounded_border(hl_name)
   return {
     { "╭", hl_name },
     { "─", hl_name },
@@ -87,11 +100,11 @@ cmp.setup {
   window = {
     completion = {
       side_padding = 1,
-      border = border "CmpBorder",
+      border = solid_border "CmpBorder",
       scrollbar = false,
     },
     documentation = {
-      border = "solid",
+      border = solid_border "CmpBorder",
     }
   },
 
@@ -138,3 +151,24 @@ cmp.setup {
     { name = "path" },
   }
 }
+
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+  }, {
+      {
+        name = 'cmdline',
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      }
+    })
+})

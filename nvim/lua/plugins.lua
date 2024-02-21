@@ -80,6 +80,7 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
     },
     config = function()
       require "plugins.cmp"
@@ -89,7 +90,7 @@ require("lazy").setup({
   -- Useful plugin to show you pending keybinds.
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", '"', "'", "`", "c", "d" },
+    keys = { "<leader>", '"', "'", "`", "d" },
     opts = {},
   },
 
@@ -164,6 +165,11 @@ require("lazy").setup({
     cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      }
     },
     config = function()
       require "plugins.telescope"
@@ -245,6 +251,44 @@ require("lazy").setup({
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
+  },
+
+  {
+    "Shatur/neovim-session-manager",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      autosave_only_in_session = true,
+    },
+    cmd = "SessionManager",
+    keys = { "<leader>" },
+  },
+
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+      lsp = {
+        progress = {
+          enabled = false,
+        }
+      },
+      messages = {
+        enabled = false,
+      }
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+    }
   },
 
 }, lazy_config)

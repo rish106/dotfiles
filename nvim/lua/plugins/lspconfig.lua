@@ -155,11 +155,21 @@ lspconfig.sqls.setup {
       connections = {
         {
           driver = 'postgresql',
-          dataSourceName = 'host=localhost port=5432 user=postgres password="" dbname=testdb',
+          dataSourceName = 'host=localhost port=5432 user=postgres password="" dbname=a2db',
         },
       },
     },
   },
+}
+
+lspconfig.bashls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.ocamllsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }

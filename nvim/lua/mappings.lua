@@ -60,6 +60,22 @@ map("n", "<leader>sh", "<cmd> Telescope help_tags <CR>", { desc = "Search Help" 
 map("n", "<leader>sw", "<cmd> Telescope grep_string <CR>", { desc = "Search current Word" })
 map("n", "<leader>sg", "<cmd> Telescope live_grep <CR>", { desc = "Search by Grep" })
 map("n", "<leader>sd", "<cmd> Telescope diagnostics <CR>", { desc = "Search Diagnostics" })
+map("n", "<leader>u", "<cmd> Telescope undo <CR>", { desc = "Search Undo History" })
+
+map("n", "<leader>fs", "<cmd> SessionManager load_session<CR>", { desc = "Load session" })
+map("n", "<leader>ls", "<cmd> SessionManager load_last_session<CR>", { desc = "Load last session" })
+map("n", "<leader>ss", "<cmd> SessionManager save_current_session<CR>", { desc = "Save session" })
+
+local function toggle_neovide_fullscreen()
+  local curr_value = vim.g.neovide_fullscreen
+  if curr_value == nil or curr_value == false then
+    vim.g.neovide_fullscreen = true
+  else
+    vim.g.neovide_fullscreen = false
+  end
+end
+
+map("n", "<D-f>", toggle_neovide_fullscreen, { desc = "Toggle fullscreen in neovide" })
 
 vim.api.nvim_create_augroup("execute_code", {
   clear = true,

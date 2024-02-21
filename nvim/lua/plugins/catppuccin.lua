@@ -21,6 +21,7 @@ require("catppuccin").setup {
     native_lsp = {
       enabled = true,
     },
+    noice = true,
     telescope = {
       enabled = true,
     },
