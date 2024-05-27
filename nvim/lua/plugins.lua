@@ -47,7 +47,6 @@ require("lazy").setup({
   -- Autocompletion
   {
     "hrsh7th/nvim-cmp",
-    commit = "950d0e3a93ba61c13b031c086d11eacf4bd48d24",
     event = "InsertEnter",
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
@@ -224,19 +223,11 @@ require("lazy").setup({
   {
     "NvChad/nvim-colorizer.lua",
     event = "BufRead",
-    opts = {},
-  },
-
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
+    opts = {
+      user_default_options = {
+        names = false,
+      },
     },
-    config = function()
-      require "plugins.harpoon"
-    end,
-    event = "VeryLazy",
   },
 
   {
