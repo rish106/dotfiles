@@ -2,14 +2,12 @@
 
 source "$HOME/.config/sketchybar/icons.sh"
 
-airport=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)
-AIRPORT=$(echo "$airport" | awk 'NR==1 {print $2}')
-LABEL=$(echo "$airport" | grep -o "SSID: .*" | sed 's/^SSID: //')
+airport="$(networksetup -getairportnetwork en0)"
 UPDOWN="$(ifstat -i "en0" 0.1 1 | tail -n 1)"
 DOWN_SPEED=$(($(echo "$UPDOWN" | awk "{ print \$1 }" | cut -f 1 -d ".")))
 UP_SPEED=$(($(echo "$UPDOWN" | awk "{ print \$2 }" | cut -f 1 -d ".")))
 
-if [ "$AIRPORT" == "Off" ] || [ -z "$LABEL" ]; then
+if [ ! -z $(echo $airport | grep "You are not associated with an AirPort network." ) ]; then
     sketchybar -m --set $NAME icon.drawing=off
 elif [ $UP_SPEED -gt $DOWN_SPEED ]; then
     sketchybar -m --set $NAME icon.drawing=on icon=$UPLOAD
