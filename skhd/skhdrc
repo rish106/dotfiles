@@ -108,9 +108,6 @@ alt - 0 : (blueutil -p | grep 1 && blueutil -p 0 || blueutil -p 1) &> /dev/null
 
 # new window of app in current desktop
 cmd - return : open -n -a kitty
-cmd + shift - return : open -n -a Neovide; \
-                       sleep 0.5; \
-                       yabai -m window --focus "$(yabai -m query --windows | jq 'map(select(.app == "Neovide")) | .[0].id')"
 ctrl - return : open -n -a Firefox
 
 # app launcher
