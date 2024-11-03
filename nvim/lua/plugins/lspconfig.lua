@@ -137,12 +137,7 @@ lspconfig.pylsp.setup {
   },
 }
 
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.gopls.setup {
+lspconfig.ts_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
@@ -163,11 +158,6 @@ lspconfig.sqls.setup {
 }
 
 lspconfig.bashls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.ocamllsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

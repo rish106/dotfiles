@@ -46,7 +46,7 @@ map("n", "<leader>d", "<cmd> bd <CR>", { silent = true, noremap = true })
 map("n", "YY", "<cmd> %y+ <CR>", { silent = true, noremap = true })
 
 -- Trouble
-map("n", "<leader>v", "<cmd> TroubleToggle <CR>", { silent = true })
+map("n", "<leader>v", "<cmd> Trouble diagnostics toggle <CR>", { silent = true })
 
 -- Escape terminal mode
 map("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), { silent = true, noremap = true, desc = "Escape terminal mode"})
@@ -90,7 +90,7 @@ local function execute_code(extension, command)
 end
 
 execute_code("c", "gcc \"%\" && ./a.out")
-execute_code("cpp", "g++ -std=c++20 -O2 \"%\" && ./a.out")
+execute_code("cpp", "g++ -DCUSTOM_DEBUG -std=c++23 -O2 \"%\" && ./a.out")
 execute_code("java", "java \"%\"")
 execute_code("py", "python3 \"%\"")
 execute_code("go", "go run \"%\"")
