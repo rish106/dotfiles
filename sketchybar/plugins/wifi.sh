@@ -3,16 +3,15 @@
 source "$HOME/.config/sketchybar/colors.sh"
 source "$HOME/.config/sketchybar/icons.sh"
 
-airport="$(networksetup -getairportnetwork en0)"
-POWER_STATUS="$(echo "$airport" | grep "Wi-Fi power is currently off." )"
-CONNECT_STATUS="$(echo "$airport" | grep "You are not associated with an AirPort network.")"
+WIFI_SSID="$(ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}')"
+POWER_STATUS="$(networksetup -getairportpower en0 | grep -owh "On")"
 
-if [ ! -z "$POWER_STATUS" ]; then
+if [ -z "$POWER_STATUS" ]; then
     sketchybar -m --set $NAME   icon=$WIFI_OFF              \
                                 icon.color=$WHITE           \
                                 label.padding_right=2
     LABEL=""
-elif [ ! -z "$CONNECT_STATUS" ]; then
+elif [ -z "$WIFI_SSID" ]; then
     sketchybar -m --set $NAME   icon=$WIFI_DISCONNECTED     \
                                 icon.color=$WHITE           \
                                 label.padding_right=2
@@ -21,7 +20,7 @@ else
     sketchybar -m --set $NAME   icon=$WIFI_CONNECTED        \
                                 icon.color=$GREEN           \
                                 label.padding_right=4
-    LABEL=$(echo "$airport" | cut -c 24-)
+    LABEL="$WIFI_SSID"
 fi
 
 sketchybar -m --set $NAME label="$LABEL"
