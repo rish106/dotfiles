@@ -2,12 +2,12 @@ export TERM="xterm-256color"
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 
-export C_INCLUDE_PATH="$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin23/13/include:\
-$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin23/13/include-fixed:\
+export C_INCLUDE_PATH="$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin24/14/include:\
+$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin24/14/include-fixed:\
 $HOMEBREW_PREFIX/include:\
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include"
-export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include/c++/13/aarch64-apple-darwin23:\
-$HOMEBREW_PREFIX/include/c++/13:\
+export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include/c++/14/aarch64-apple-darwin24:\
+$HOMEBREW_PREFIX/include/c++/14:\
 $HOMEBREW_PREFIX/include"
 
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
