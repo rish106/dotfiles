@@ -30,10 +30,10 @@ yabai -m config window_animation_duration    0.35
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config external_bar                 all:28:0
-yabai -m config top_padding                  8
-yabai -m config bottom_padding               8
-yabai -m config left_padding                 8
-yabai -m config right_padding                8
+yabai -m config top_padding                  4
+yabai -m config bottom_padding               4
+yabai -m config left_padding                 4
+yabai -m config right_padding                4
 yabai -m config window_gap                   8
 
 # Set all windows sub-layer to below
@@ -53,6 +53,9 @@ yabai -m rule --add app="^ProtonVPN$" manage=off sub-layer=below
 yabai -m rule --add app="^Preview$" manage=off sub-layer=below
 yabai -m rule --add app="^Obsidian$" manage=off sub-layer=below
 yabai -m rule --add app="^Mos$" manage=off sub-layer=below
+yabai -m rule --add app="^Notes$" manage=off sub-layer=below
+yabai -m rule --add app="^Font Book$" manage=off sub-layer=below
+yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off sub-layer=below
 
 # custom app launcher
 yabai -m rule --add title="mylauncher" manage=off sub-layer=above
@@ -67,5 +70,3 @@ yabai -m signal --add event=window_created action="sketchybar --trigger windows_
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 echo "yabai configuration loaded.."
-
-borders active_color=0xff9399b2 inactive_color=0xff3e4145 width=4.0 2>/dev/null 1>&2 &
