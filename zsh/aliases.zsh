@@ -15,8 +15,6 @@ alias gds='git diff -w --staged'
 alias grs='git restore --staged'
 alias gst='git rev-parse --git-dir > /dev/null 2>&1 && git status || ls'
 
-alias lg="lazygit"
-
 alias c="clear"
 
 # brew

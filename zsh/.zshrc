@@ -2,25 +2,12 @@ export TERM="xterm-256color"
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 
-export C_INCLUDE_PATH="$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin24/14/include:\
-$HOMEBREW_PREFIX/lib/gcc/current/gcc/aarch64-apple-darwin24/14/include-fixed:\
-$HOMEBREW_PREFIX/include:\
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include"
-export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include/c++/14/aarch64-apple-darwin24:\
-$HOMEBREW_PREFIX/include/c++/14:\
-$HOMEBREW_PREFIX/include"
-
 export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
 
 take() {
     mkdir -p "$1"
     cd "$1"
 }
-
-export PATH="$PATH:/opt/homebrew/opt/postgresql@15/bin"
-
-# ocaml package manager - opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # VIM MODE
 bindkey -v
@@ -33,10 +20,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#11111b,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
-# set gopath
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
 
 # Use lf to switch directories
 lfcd() {
