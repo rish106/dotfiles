@@ -61,9 +61,9 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
-local lspconfig = require "lspconfig"
+local lspconfig = vim.lsp.config
 
-lspconfig.lua_ls.setup {
+lspconfig('lua_ls', {
   on_attach = on_attach,
   capabilities = capabilities,
 
@@ -83,44 +83,14 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
+})
 
-lspconfig.texlab.setup {
+lspconfig('clangd', {
   on_attach = on_attach,
   capabilities = capabilities,
-  settings = {
-    texlab = {
-      build = {
-        args = { "-pdf", "-shell-escape", "-interaction=nonstopmode", "-synctex=1", "-auxdir=./aux", "%f" },
-        executable = "latexmk",
-        forwardSearchAfter = false,
-        onSave = false,
-      },
-      chktex = {
-        onEdit = false,
-        onOpenAndSave = false,
-      },
-      forwardSearch = {
-        executable = 'sioyek',
-        args = {
-          '--reuse-window',
-          '--execute-command', 'toggle_synctex', -- Open Sioyek in synctex mode.
-          '--inverse-search',
-          [[nvim-texlabconfig -file %%%1 -line %%%2 -server ]] .. vim.v.servername,
-          '--forward-search-file', '%f',
-          '--forward-search-line', '%l', '%p'
-        },
-      },
-    }
-  }
-}
+})
 
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.pylsp.setup {
+lspconfig('pylsp', {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -135,32 +105,12 @@ lspconfig.pylsp.setup {
       },
     },
   },
-}
+})
 
-lspconfig.ts_ls.setup {
+lspconfig('bashls', {
   on_attach = on_attach,
   capabilities = capabilities,
-}
-
-lspconfig.sqls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    sqls = {
-      connections = {
-        {
-          driver = 'postgresql',
-          dataSourceName = 'host=localhost port=5432 user=postgres password="" dbname=a2db',
-        },
-      },
-    },
-  },
-}
-
-lspconfig.bashls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+})
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
