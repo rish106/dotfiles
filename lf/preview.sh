@@ -11,7 +11,7 @@ hash() {
         "$(gstat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | md5 -q | awk '{print $1}')"
 }
 
-IMAGE_CACHE_PATH="$(hash "$FILE_PATH")" # Full path that should be used to cache image preview
+IMAGE_CACHE_PATH="$(hash "$FILE_PATH")"
 
 image_preview() {
     kitty +kitten icat --transfer-mode file --stdin no --place \
@@ -20,8 +20,8 @@ image_preview() {
 }
 
 video_preview() {
-    ffmpegthumbnailer -m -i "${FILE}" -o "${IMAGE_CACHE_PATH}" -s 0
-    image_preview "$IMAGE_CACHE_PATH"
+    ffmpegthumbnailer -m -i "${FILE}" -o "${IMAGE_CACHE_PATH}" -s 0 && \
+        image_preview "$IMAGE_CACHE_PATH"
     exit 1
 }
 
@@ -32,8 +32,8 @@ pdf_preview() {
         -scale-to-y -1 \
         -singlefile \
         -jpeg -tiffcompression jpeg \
-        -- "$FILE" "${IMAGE_CACHE_PATH%.*}"
-    image_preview "$IMAGE_CACHE_PATH"
+        -- "$FILE" "${IMAGE_CACHE_PATH%.*}" && \
+        image_preview "$IMAGE_CACHE_PATH"
     exit 1
 }
 
@@ -42,7 +42,7 @@ MIME_TYPE="$(file --dereference --brief --mime-type "$FILE")"
 case "$MIME_TYPE" in
     application/x-tar | application/gzip) tar tf "$FILE";;
     application/zip) unzip -l "$FILE";;
-    application/x-rar) unrar l "$FILE";;
+    application/x-rar) unar l "$FILE";;
     application/x-7z-compressed) 7z l "$FILE";;
     image/*) image_preview "$FILE";;
     video/*) video_preview;;
